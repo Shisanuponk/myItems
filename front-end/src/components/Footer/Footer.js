@@ -7,7 +7,8 @@ const FooterBox = styled.div`
   background: rgb(37, 37, 37);
   color: white;
   text-align: center;
-  position: static;
+  position: absolute;
+  bottom: 0;
   bottom: 0px;
 
   div{
