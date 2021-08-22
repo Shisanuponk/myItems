@@ -1,0 +1,28 @@
+.list-menu-box {
+    width: 300px;
+    height: 500px;
+    border: 1px solid black;
+    border-radius: 25px;
+}
+
+.list-menu-box > ul {
+    padding: 40px 10px;
+    list-style: none;
+    text-align: center;
+}
+
+.list-menu-box > ul > li {
+    padding: 10px;
+    border-bottom: 1px solid gray;
+    transition: .25s;
+}
+
+.list-menu-box > ul > li:hover {
+    padding-top: 30px;
+    font-size: 30px;
+    /* border-top: 2px solid black; */
+    border-bottom: 2px solid black;
+    text-align: right;
+    /* box-shadow: 2px 2px 2px 2px; */
+    transition: .25s;
+}

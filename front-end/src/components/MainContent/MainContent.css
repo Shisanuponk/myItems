@@ -1,0 +1,36 @@
+/* Container Content and Lists */
+.main-content {
+    padding: 50px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Screen Content */
+.screen-content {
+    margin-left: 50px;
+    /* padding: 0px 20px; */
+    max-height: 500px;
+    width: 100%;
+    height: 500px;
+    border: 1px solid rgb(34, 34, 69);
+    border-radius: 25px;
+}
+
+
+/* Scrollbar */
+.screen-content > * {
+    height: 100%;
+    overflow-y: auto;
+}
+.screen-content > *::-webkit-scrollbar {
+    display: none;
+  width: 10px;
+}
+.screen-content > *::-webkit-scrollbar-track {
+  background: none;
+}
+.screen-content > *::-webkit-scrollbar-thumb {
+  background-color: #a8bbbf;
+  border-radius: 20px;
+  border: 1px solid none;
+}

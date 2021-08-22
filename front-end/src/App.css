@@ -1,0 +1,8 @@
+.main-app {
+    height: 100%;
+    display: block;
+    justify-content: space-between;
+}
+body::-webkit-scrollbar {
+    display: none;
+  }
