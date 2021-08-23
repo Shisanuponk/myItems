@@ -26,3 +26,9 @@
     /* box-shadow: 2px 2px 2px 2px; */
     transition: .25s;
 }
+
+@media (max-width: 768px) {
+    .list-menu-box {
+        display: none;
+    }
+}
