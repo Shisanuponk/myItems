@@ -1,42 +1,29 @@
-import { Route, Switch } from "react-router-dom";
-
-// Import Components
-import Footer from "./components/Footer/Footer";
-import MainContent from "./components/MainContent/MainContent";
-import Nav from "./components/Nav/Nav";
+import styled from "styled-components";
 
 // Import Styles
 import "./App.css";
 
+// Import Component
+import Nav from "./components/Nav";
+import Home from "./screens/Home";
+
+const Content = styled.div`
+padding: 2% 15%;
+min-height: 768px;
+overflow: auto;
+
+`
+
 function App() {
   return (
     <div className="main-app">
-      {/* Nav Header */}
+      
       <Nav />
 
-      {/* Router */}
-      <Switch>
-        <Route path="/">
-          <MainContent content="home" />
-        </Route>
+      <Content>
+        <Home />
 
-        <Route path="/store">
-          <MainContent content="store" />
-        </Route>
-        <Route path="/support">
-          <MainContent content="support" />
-        </Route>
-        <Route path="/about">
-          <MainContent content="about" />
-        </Route>
-
-        <Route path="*">
-          <MainContent content="404" />
-        </Route>
-      </Switch>
-
-      {/* Footer */}
-      <Footer />
+      </Content>      
     </div>
   );
 }

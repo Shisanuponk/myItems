@@ -1,8 +1,7 @@
 .main-app {
-    height: 100%;
+    width: 100%;
     display: block;
-    justify-content: space-between;
 }
-body::-webkit-scrollbar {
+/* body::-webkit-scrollbar {
     display: none;
-  }
+  } */
