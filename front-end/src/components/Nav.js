@@ -67,12 +67,16 @@ const Nav = () => {
                         <button>Login/Register</button>
                     </div>
                     
-                    <NavLink to="/cart" className="nav-icon">
+                    <NavLink to="/cart" className="nav-icon" activeClassName="nav-icon-active" exact>
                         <img src={`./img/icons/${themes.iconcart}`} alt="icon-cart" />
                     </NavLink>
-                    <NavLink to="/favorite" className="nav-icon">
+                    <NavLink to="/favorite" className="nav-icon" activeClassName="nav-icon-active" exact>
                         <img src={`./img/icons/${themes.iconheart}`} alt="icon-favorite" />
                     </NavLink>
+
+                    <div className="nav-hamberger">
+                        <img src={`./img/icons/${themes.iconhamberger}`} alt="" />
+                    </div>
                 </ul>
             </div>
         </NavBox>

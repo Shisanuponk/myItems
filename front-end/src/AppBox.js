@@ -5,10 +5,6 @@ const AppBox = styled.div`
     height: 100%;
     display: block;
 
-    body::-webkit-scrollbar {
-        display: none;
-    }
-
 `
 
 export default AppBox

@@ -15,9 +15,10 @@ export const Themes = {
         fontcolor: "#404040",
 
         // icons
+        backgroundicon: "#B3B3B3",
         iconcart: "icons8-shopping-cart-dark.png",
         iconheart: "icons8-heart-dark.png",
-        navbtnlogin: "",
+        iconhamberger: "icons8-squared-menu-dark.png",
 
     },
     dark: {
@@ -34,9 +35,10 @@ export const Themes = {
         fontcolor: "#B3B3B3",
 
         // icons
+        backgroundicon: "#B3B3B3",
         iconcart: "icons8-shopping-cart-light.png",
         iconheart: "icons8-heart-light.png",
-        navbtnlogin: "",
+        iconhamberger: "icons8-squared-menu-light.png",
 
     }
 }
