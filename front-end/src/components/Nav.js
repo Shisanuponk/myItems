@@ -20,6 +20,7 @@ const Nav = () => {
 
                 {/* Button Toggle Change Theme */}
                     <ToggleButton
+                        className="nav-toggle"
                         inactiveLabel={'Light'}
                         activeLabel={'Dark'}
                         colors={{

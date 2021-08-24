@@ -3,9 +3,7 @@ import styled from "styled-components"
 // NavBox Style
 const NavBox = styled.div`
 padding: 0 10px;
-/* width: 100%; */
 height: 55px;
-color: ${props => props.theme.fontcolor};
 position: sticky;
 top: 0;
 display: flex;
@@ -13,13 +11,15 @@ justify-content: space-between;
 
 ${ props => `
 background: ${props.theme.navcolor};
+border-bottom: 1px solid ${props.theme.navborder};
 box-shadow: 0 5px 5px ${props.theme.navshadow};
 `
 }
 
 .nav-logo{
-    padding: 10px 10px;
-    color: ${props => props.theme.colorhighlight};
+    margin: 0;
+    padding: 10px 20px;
+    color: ${props => props.theme.colorheadhighlight};
     display: flex;
     > * {
         margin: 0;
@@ -40,24 +40,20 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
         }
 
         li{
-            padding: 10px 10px;
-            color: ${props => props.theme.fontcolor};
+            padding: 10px;
+            font-size: 1rem;
+            /* font-weight: bold; */
+            color: ${props => props.theme.colorhighlight};
             transition: .25s;
 
             :hover {
-                padding: 5px 10px;
-                font-weight: bold;
-                font-size: 1.5rem;
-                color: ${ props => props.theme.colorhighlight};
+                color: ${ props => props.theme.colorheadhighlight};
                 transition: .25s;
             }
         }
         .nav-menu-active {
             li{
-                padding: 5px 10px;
-                font-size: 1.5rem;
-                font-weight: bold;
-                color: ${ props => props.theme.colorhighlight};
+                color: ${ props => props.theme.colorheadhighlight};
             }
         }
 
@@ -66,7 +62,6 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
         }
 
         img{
-            /* padding: 5px; */
             width: 40px;
             border: 1px solid none;
             border-radius: 50%;
@@ -74,15 +69,14 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
         .nav-icon-active > img {
             padding: 5px;
             width: 30px;
-            background: ${props => props.theme.backgroundicon};
+            background: ${props => props.theme.background};
             border: 1px solid ${props => props.theme.borderhighlight};
-            /* transition: .25s; */
         }
         button{
             padding: 10px 20px;
             background: none;
             ${ props => `
-                color: ${props.theme.fontcolor};
+                color: ${props.theme.colorhighlight};
                 border: 2px solid ${props.theme.borderhighlight};
             `
             }

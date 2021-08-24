@@ -23,22 +23,29 @@ export const Themes = {
     },
     dark: {
 
-        background: "#404040",
-        colorhighlight: "#FFFFFF",
+        background: "#010409",
+        color: "#7e929e",
+        colorhighlight: "#C9D1D9",
+        // Highlight
+        colorheadhighlight: "#EFF2DC",
         borderhighlight: "#FFFFFF",
         shadowhighlight: "#FFFFFF",
+        
 
         // Nav
-        navcolor: "#181818",
-        navshadow: "#282828",
-        navborder: "#FFFFFF",
-        fontcolor: "#B3B3B3",
+        navcolor: "#161B22",
+        navshadow: "#0D1117",
+        navborder: "#2b3138",
+        fontcolor: "#C9D1D9",
 
         // icons
-        backgroundicon: "#B3B3B3",
         iconcart: "icons8-shopping-cart-light.png",
         iconheart: "icons8-heart-light.png",
         iconhamberger: "icons8-squared-menu-light.png",
+
+        // Content
+        contentbackground: "#0d1117",
+        contentborder: "#2b3138",
 
     }
 }
