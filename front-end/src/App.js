@@ -6,7 +6,7 @@ import styled from "styled-components";
 import ThemeContext, {Themes} from './storage/Themes'
 
 // Import Styles
-import "./App.css";
+import AppBox from './AppBox';
 
 // Import Component
 import Nav from "./components/Nav";
@@ -15,10 +15,10 @@ import Home from "./screens/Home";
 function App() {
 
   const [themes, setThemes] = useState(Themes.dark)
-
+  
   return (
     <ThemeContext.Provider value={[themes, setThemes]}>
-      <div className="main-app">
+      <AppBox theme={themes}>
       
       <Nav />
 
@@ -38,12 +38,10 @@ function App() {
         </Switch>
 
         </Content>      
-    </div>
+    </AppBox>
     </ThemeContext.Provider>
   );
 }
-
-// Style
 // Style Content
 const Content = styled.div`
 padding: 2% 15%;
