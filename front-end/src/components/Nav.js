@@ -1,4 +1,4 @@
-import React, { useContext } from 'react'
+import React, { useContext, useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import ToggleButton from 'react-toggle-button'
 
@@ -10,6 +10,7 @@ import ThemeContext, { Themes } from '../storage/Themes'
 
 const Nav = () => {
     const [themes, setThemes] = useContext(ThemeContext)
+    const [hambergerMenu, setHambergerMenu] = useState(themes.iconhamberger)
 
     document.body.style.backgroundColor = themes.background;
 
@@ -74,12 +75,12 @@ const Nav = () => {
                     <NavLink to="/favorite" className="nav-icon" activeClassName="nav-icon-active" exact>
                         <img src={`./img/icons/${themes.iconheart}`} alt="icon-favorite" />
                     </NavLink>
-
-                    <div className="nav-hamberger">
-                        <img src={`./img/icons/${themes.iconhamberger}`} alt="" />
-                    </div>
                 </ul>
             </div>
+            <div className="nav-items nav-hamberger">
+                <img src={`./img/icons/${themes.iconhamberger}`} alt="" />
+            </div>
+            
         </NavBox>
     )
 }

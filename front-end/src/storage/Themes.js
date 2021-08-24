@@ -3,22 +3,28 @@ import { createContext } from "react"
 export const Themes = {
     light: {
 
-        background: "#FFFFFF",
-        colorhighlight: "#121212",
-        borderhighlight: "#121212",
-        shadowhighlight: "#121212",
+        background: "#F0F2F5",
+        color: "#6C6D71",
+        colorhighlight: "#050505",
+        // Highlight
+        colorheadhighlight: "#050505",
+        borderhighlight: "#D4D6D9",
+        shadowhighlight: "#DEDFE0",
+        
 
         // Nav
         navcolor: "#FFFFFF",
-        navshadow: "#B3B3B3",
-        navborder: "#FFFFFF",
-        fontcolor: "#404040",
+        navshadow: "#DEDFE0",
+        navborder: "#D4D6D9",
 
         // icons
-        backgroundicon: "#B3B3B3",
         iconcart: "icons8-shopping-cart-dark.png",
         iconheart: "icons8-heart-dark.png",
         iconhamberger: "icons8-squared-menu-dark.png",
+
+        // Content
+        contentbackground: "#0d1117",
+        contentborder: "#2b3138",
 
     },
     dark: {
@@ -36,7 +42,6 @@ export const Themes = {
         navcolor: "#161B22",
         navshadow: "#0D1117",
         navborder: "#2b3138",
-        fontcolor: "#C9D1D9",
 
         // icons
         iconcart: "icons8-shopping-cart-light.png",

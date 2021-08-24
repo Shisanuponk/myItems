@@ -14,7 +14,7 @@ import Home from "./screens/Home";
 
 function App() {
 
-  const [themes, setThemes] = useState(Themes.dark)
+  const [themes, setThemes] = useState(Themes.light)
   
   return (
     <ThemeContext.Provider value={[themes, setThemes]}>
