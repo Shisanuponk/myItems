@@ -1,4 +1,9 @@
+import React, { useState } from 'react'
+import { Switch, Route } from 'react-router-dom'
 import styled from "styled-components";
+
+// Import Storage
+import ThemeContext, {Themes} from './storage/Themes'
 
 // Import Styles
 import "./App.css";
@@ -7,25 +12,43 @@ import "./App.css";
 import Nav from "./components/Nav";
 import Home from "./screens/Home";
 
-const Content = styled.div`
-padding: 2% 15%;
-min-height: 768px;
-overflow: auto;
-
-`
-
 function App() {
+
+  const [themes, setThemes] = useState(Themes.dark)
+
   return (
-    <div className="main-app">
+    <ThemeContext.Provider value={[themes, setThemes]}>
+      <div className="main-app">
       
       <Nav />
 
       <Content>
-        <Home />
 
-      </Content>      
+        {/* Routing */}
+        <Switch>
+
+          <Route path="/" exact>
+            <Home />
+          </Route>
+
+          <Route path="*">
+            <p>404 Page not found</p>
+          </Route>
+
+        </Switch>
+
+        </Content>      
     </div>
+    </ThemeContext.Provider>
   );
 }
 
+// Style
+// Style Content
+const Content = styled.div`
+padding: 2% 15%;
+overflow: auto;
+`
+
+export { ThemeContext };
 export default App;
