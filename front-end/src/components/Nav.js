@@ -41,7 +41,7 @@ const Nav = () => {
                 {/* End Button Toggle Change Theme */}
             </div>
 
-            <div className="nav-items">
+            <div className="nav-items nav-menu-router">
                 <ul>
                     <NavLink to="/" activeClassName="nav-menu-active" exact>
                         <li>Home</li>
@@ -58,7 +58,7 @@ const Nav = () => {
                 </ul>
             </div>
 
-            <div className="nav-items">
+            <div className="nav-items nav-menu-user">
                 <ul>
                     {/* <NavLink to="/userId" className="nav-icon">
                         <img src="./img/user-img2.jpg" alt="user-img" />

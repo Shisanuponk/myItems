@@ -100,6 +100,18 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
     }
 }
 
+@media (max-width: 870px){
+    .nav-menu-router {
+        display: none;
+    }
+}
+
+@media (max-width: 768px){
+    .nav-menu-user {
+        display: none;
+    }
+}
+
 `
 
 export default NavBox
