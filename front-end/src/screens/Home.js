@@ -1,45 +1,57 @@
-import React from 'react'
-import styled from 'styled-components'
+import React, { useContext, useState } from "react";
+import styled from "styled-components";
+import CarouselHome from "../components/HomeContent/CarouselHome";
+// import ToggleButton from 'react-toggle-button'
+// import HomeBox from '../components/HomeContent/HomeBox'
+// import ThemeContext, { Themes } from '../storage/Themes'
 
-const HomeBox = styled.div`
-/* padding: 10px 20px; */
-width: 100%;
-color: #C9D1D9;
-background: #0d1117;
-border: 1px solid #2b3138;
-`
+
+ const HomeBox = styled.div`
+// //   /* padding: 10px 20px; */
+    width: 100%;
+   color: #c9d1d9;
+   background: #0d1117;
+   border: 1px solid #ffcc44;
+
+ `;
 
 const Home = () => {
-    return (
-        <HomeBox>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            <p>HomePage</p>
-            
-            
-        </HomeBox>
-    )
-}
+    
+  return (
+    
+    
+      <HomeBox>
+        <div>
+          <h1 style={{ textAlign: "center" }}>Welcome to My Item </h1>
+          <CarouselHome />
 
-export default Home
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+          <p>HomePage</p>
+        </div>
+      </HomeBox>
+    
+  );
+};
+
+export default Home;
