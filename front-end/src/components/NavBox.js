@@ -3,7 +3,7 @@ import styled from "styled-components"
 // NavBox Style
 const NavBox = styled.div`
 padding: 0 10px;
-height: 55px;
+height: 60px;
 position: sticky;
 top: 0;
 display: flex;
