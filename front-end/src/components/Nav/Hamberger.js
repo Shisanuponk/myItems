@@ -52,7 +52,7 @@ const Hamberger = ({ theme }) => {
             <div />
             <div />
         </BergerStyle>
-        <MenuSide open={isOpen} />
+        <MenuSide theme={theme} open={isOpen} />
         </>
     )
 }

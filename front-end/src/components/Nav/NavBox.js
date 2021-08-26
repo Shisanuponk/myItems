@@ -3,6 +3,7 @@ import styled from "styled-components";
 // NavBox Style
 const NavBox = styled.div`
   padding: 0 10px;
+  /* width: 100%; */
   height: 60px;
   position: sticky;
   top: 0;
@@ -18,11 +19,14 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
   .nav-logo {
     margin: 0;
     padding: 10px 20px;
-    color: ${(props) => props.theme.colorheadhighlight};
+    font-size: 25px;
+    font-weight: bold;
     display: flex;
     > * {
       margin: 0;
       padding: 0 10px;
+      text-decoration: none;
+      color: ${(props) => props.theme.colorheadhighlight};
     }
   }
 
@@ -53,7 +57,6 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
       .nav-menu-active {
         li {
           color: ${(props) => props.theme.colorheadhighlight};
-          /* transition: .25s; */
         }
       }
 
@@ -95,15 +98,11 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
   }
 
   .nav-hamberger {
-    padding: 20px;
-    /* display: none; */
+    display: none;
   }
 
-  @media (max-width: 870px) {
-    .nav-items>ul {
-      display: none;
-    }
-    .nav-menu-user {
+  @media (max-width: 875px) {
+    .nav-items > .item-box {
       display: none;
     }
     .nav-hamberger {

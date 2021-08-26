@@ -6,19 +6,20 @@ import ToggleButton from 'react-toggle-button'
 import NavBox from './NavBox'
 
 // Import Storage
-import ThemeContext, { Themes } from '../storage/Themes'
+import ThemeContext, { Themes } from '../../storage/Themes'
 import Hamberger from './Hamberger'
+import LoginRegister from './LoginRegister'
 
 const Nav = () => {
     const [themes, setThemes] = useContext(ThemeContext)
-    const [hambergerMenu, setHambergerMenu] = useState(themes.iconhamberger)
+    const [isBtnOpen, setIsBtnOpen] = useState(false)
 
     document.body.style.backgroundColor = themes.background;
 
     return (
         <NavBox theme={themes}>
             <div className="nav-logo">
-                <h2>myItems</h2>
+                <NavLink to="/" exact>myItems</NavLink>
 
                 {/* Button Toggle Change Theme */}
                     <ToggleButton
@@ -44,6 +45,7 @@ const Nav = () => {
                 {/* End Button Toggle Change Theme */}
             </div>
 
+            {/* Middle Menu For Routing */}
             <div className="nav-items nav-menu-router">
                 <ul className="item-box">
                     <NavLink to="/" activeClassName="nav-menu-active" exact>
@@ -61,13 +63,15 @@ const Nav = () => {
                 </ul>
             </div>
 
+            {/* Menu User */}
             <div className="nav-items nav-menu-user">
                 <ul className="item-box">
                     {/* <NavLink to="/userId" className="nav-icon">
                         <img src="./img/user-img2.jpg" alt="user-img" />
                     </NavLink> */}
                     <div className="nav-icon">
-                        <button>Login/Register</button>
+                        <button onClick={() => setIsBtnOpen(!isBtnOpen)}>Login/Register</button>
+                        <LoginRegister theme={themes} open={isBtnOpen} />
                     </div>
                     
                     <NavLink to="/cart" className="nav-icon" activeClassName="nav-icon-active" exact>
@@ -79,6 +83,7 @@ const Nav = () => {
                 </ul>
             </div>
 
+            {/* Hamberger Menu */}
             <div className="nav-items nav-hamberger">
                 <Hamberger theme={themes} />
             </div>
