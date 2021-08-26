@@ -1,5 +1,4 @@
 import React, { useContext, useState } from "react";
-import styled from "styled-components";
 
 // Import Styled Components HomePage
 import HomePage from './HomePage'
