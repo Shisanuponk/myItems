@@ -4,8 +4,10 @@ const HomePage = styled.div`
 
 width: 100%;
 height: 100%;
-background: ${ props => props.theme.background};
-color: ${props => props.theme.color};
+${props => `
+background: ${props.theme.background};
+color: ${props.theme.color };
+`}
 
 /* Header title */
 .header-title {
