@@ -78,7 +78,11 @@ const Nav = () => {
                 </ul>
             </div>
             <div className="nav-items nav-hamberger">
-                <img src={`./img/icons/${themes.iconhamberger}`} alt="" />
+                <div></div>
+                {/* <div></div>
+                <div></div>
+                <div></div> */}
+
             </div>
             
         </NavBox>
