@@ -7,6 +7,7 @@ import NavBox from './NavBox'
 
 // Import Storage
 import ThemeContext, { Themes } from '../storage/Themes'
+import Hamberger from './Hamberger'
 
 const Nav = () => {
     const [themes, setThemes] = useContext(ThemeContext)
@@ -44,24 +45,24 @@ const Nav = () => {
             </div>
 
             <div className="nav-items nav-menu-router">
-                <ul>
+                <ul className="item-box">
                     <NavLink to="/" activeClassName="nav-menu-active" exact>
-                        <li>Home</li>
+                        <li className="item">Home</li>
                     </NavLink>
                     <NavLink to="/store" activeClassName="nav-menu-active" exact>
-                        <li>Store</li>
+                        <li className="item">Store</li>
                     </NavLink>
                     <NavLink to="/merchant" activeClassName="nav-menu-active" exact>
-                        <li>Merchant</li>
+                        <li className="item">Merchant</li>
                     </NavLink>
                     <NavLink to="/support" activeClassName="nav-menu-active" exact>
-                        <li>Support</li>
+                        <li className="item">Support</li>
                     </NavLink>
                 </ul>
             </div>
 
             <div className="nav-items nav-menu-user">
-                <ul>
+                <ul className="item-box">
                     {/* <NavLink to="/userId" className="nav-icon">
                         <img src="./img/user-img2.jpg" alt="user-img" />
                     </NavLink> */}
@@ -77,14 +78,10 @@ const Nav = () => {
                     </NavLink>
                 </ul>
             </div>
-            <div className="nav-items nav-hamberger">
-                <div></div>
-                {/* <div></div>
-                <div></div>
-                <div></div> */}
 
+            <div className="nav-items nav-hamberger">
+                <Hamberger theme={themes} />
             </div>
-            
         </NavBox>
     )
 }
