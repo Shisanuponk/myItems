@@ -19,7 +19,7 @@ const Home = () => {
       <HomePage theme={themes}>
         <div className="header-title">
           <h1>Welcome to My Item </h1>
-          <Carousel />
+          <CarouSel />
         </div>
       </HomePage>
     
