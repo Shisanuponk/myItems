@@ -15,5 +15,6 @@
   "bugs": {
     "url": "https://github.com/nukdevryu/myItems/issues"
   },
-  "homepage": "https://github.com/nukdevryu/myItems#readme"
+  "homepage": "https://github.com/nukdevryu/myItems#readme",
+  "dependencies": {}
 }
