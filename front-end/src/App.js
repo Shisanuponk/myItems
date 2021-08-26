@@ -10,7 +10,9 @@ import AppBox from './AppBox';
 
 // Import Component
 import Nav from "./components/Nav";
-import Home from "./screens/Home";
+
+// Screen
+import Home from './screens/HomeSceen/Home'
 
 function App() {
 
