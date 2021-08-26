@@ -1,21 +1,20 @@
 import React, { Component } from "react";
 import Carousel from 'react-elastic-carousel';
 
-// Import Events data
-import Events from "../../storage/Events";
-
 const SlideCarousel = () => {
-  
+
+  const items = [
+    {id: 1, title: 'item #1'},
+    {id: 2, title: 'item #2'},
+    {id: 3, title: 'item #3'},
+    {id: 4, title: 'item #4'},
+    {id: 5, title: 'item #5'}
+  ]
   return (
     <div>
       <Carousel>
-        {Events.map((item, index) => 
-          <div key={index}>
-            <p>{item.title}</p>
-            <p>{item.img}</p>
-            <p>{item.detail}</p>
-            <p>{item.link}</p>
-          </div>
+        {items.map(item => 
+          <div key={item.id}>{item.title}</div>
         )}
       </Carousel>
     </div>
