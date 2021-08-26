@@ -6,7 +6,7 @@ import HomePage from './HomePage'
 
 // Import Components
 import ThemeContext, { Themes } from '../../storage/Themes'
-import Carousel from "./Carousel";
+import SlideCarousel from "./SlideCarousel";
 
 const Home = () => {
 
@@ -19,7 +19,7 @@ const Home = () => {
       <HomePage theme={themes}>
         <div className="header-title">
           <h1>Welcome to My Item </h1>
-          <CarouSel />
+          <SlideCarousel />
         </div>
       </HomePage>
     
