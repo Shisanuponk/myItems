@@ -47,6 +47,8 @@ export const Themes = {
         iconcart: "icons8-shopping-cart-light.png",
         iconheart: "icons8-heart-light.png",
         iconhamberger: "icons8-squared-menu-light.png",
+        iconfacebook: "icons8-facebook.png",
+        icongoogle: "icons8-google.png",
 
         // Content
         contentbackground: "#0d1117",

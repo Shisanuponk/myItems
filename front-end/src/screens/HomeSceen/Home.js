@@ -1,10 +1,10 @@
-import React, { useContext, useState } from "react";
+import React, { useContext } from "react";
 
 // Import Styled Components HomePage
 import HomePage from './HomePage'
 
 // Import Components
-import ThemeContext, { Themes } from '../../storage/Themes'
+import ThemeContext from '../../storage/Themes'
 import SlideCarousel from "./SlideCarousel";
 
 const Home = () => {
