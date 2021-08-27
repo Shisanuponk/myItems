@@ -9,7 +9,7 @@ import ThemeContext, {Themes} from './storage/Themes'
 import AppBox from './AppBox';
 
 // Import Component
-import Nav from "./components/Nav";
+import Nav from "./components/Nav/Nav";
 
 // Screen
 import Home from './screens/HomeSceen/Home'

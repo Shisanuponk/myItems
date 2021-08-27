@@ -3,6 +3,7 @@ import styled from "styled-components";
 // NavBox Style
 const NavBox = styled.div`
   padding: 0 10px;
+  /* width: 100%; */
   height: 60px;
   position: sticky;
   top: 0;
@@ -18,17 +19,20 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
   .nav-logo {
     margin: 0;
     padding: 10px 20px;
-    color: ${(props) => props.theme.colorheadhighlight};
+    font-size: 25px;
+    font-weight: bold;
     display: flex;
     > * {
       margin: 0;
       padding: 0 10px;
+      text-decoration: none;
+      color: ${(props) => props.theme.colorheadhighlight};
     }
   }
 
   .nav-items {
     padding: 0px 10px;
-    ul {
+    .item-box {
       margin: 0;
       padding: 10px 0px;
       list-style: none;
@@ -38,7 +42,7 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
         text-decoration: none;
       }
 
-      li {
+      .item {
         padding: 10px;
         font-size: 1rem;
         font-weight: bold;
@@ -53,7 +57,6 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
       .nav-menu-active {
         li {
           color: ${(props) => props.theme.colorheadhighlight};
-          /* transition: .25s; */
         }
       }
 
@@ -95,41 +98,11 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
   }
 
   .nav-hamberger {
-    padding: 10px;
     display: none;
-    div {
-        padding: 3px;
-        width: 50px;
-        height: 2px;
-        background: white;
-        border-radius: 5px;
-        box-shadow: 0 2px 5px black;
-        transition: all .5s ease-in-ease-out;
-        
-        ::before, ::after {
-            content: '';
-            position: absolute;
-            width: 50px;
-            height: 6px;
-            background: white;
-            border-radius: 5px;
-            transition: all .5s ease-in-ease-out;
-        }
-
-        ::before {
-            transform: translateY(-16px);
-        }
-        ::after {
-            transform: translateY(16px);
-        }
-    }
   }
 
-  @media (max-width: 870px) {
-    .nav-menu-router {
-      display: none;
-    }
-    .nav-menu-user {
+  @media (max-width: 875px) {
+    .nav-items > .item-box {
       display: none;
     }
     .nav-hamberger {
@@ -137,18 +110,6 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
     }
   }
 
-  /* @media (max-width: 768px){
-    .nav-menu-router {
-        display: none;
-    }
-    .nav-menu-user {
-        display: none;
-    }
-    .nav-hamberger {
-        display: flex;
-    }
-    
-} */
 `;
 
 export default NavBox;
