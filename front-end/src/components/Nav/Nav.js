@@ -67,12 +67,15 @@ const Nav = () => {
             {/* Menu User */}
             <div className="nav-items nav-menu-user">
                 <ul className="item-box">
-                    {/* <NavLink to="/userId" className="nav-icon">
-                        <img src="./img/user-img2.jpg" alt="user-img" />
-                    </NavLink> */}
-                    <div className="nav-icon">
+
+                    {/* <div className="nav-icon">
                         <BtnLogin theme={themes} />
-                    </div>
+                    </div> */}
+                    
+                    <NavLink to="/userId" className="nav-icon">
+                        <img src="./img/user-img2.jpg" alt="user-img" />
+                    </NavLink>
+                    
                     
                     <NavLink to="/cart" className="nav-icon" activeClassName="nav-icon-active" exact>
                         <img src={`./img/icons/${themes.iconcart}`} alt="icon-cart" />
