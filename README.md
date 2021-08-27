@@ -38,4 +38,15 @@ Database
 Host
 - Heroku
 
+
+React Package
+- react-router-dom
+- styled-components
+- react-toggle-button
+- react-elastic-carousel
+
+Node.js Package
+- nodemon
+- concurrently
+
 -----------------------------------------------------------------------------------------------------------------------------------

@@ -21,6 +21,10 @@ export const Themes = {
         iconcart: "icons8-shopping-cart-dark.png",
         iconheart: "icons8-heart-dark.png",
         iconhamberger: "icons8-squared-menu-dark.png",
+        iconfacebook: "icons8-facebook.png",
+        icongoogle: "icons8-google.png",
+        icontwitter: "icons8-line.png",
+        iconline: "icons8-twitter.png",
 
         // Content
         contentbackground: "#0d1117",
@@ -47,6 +51,10 @@ export const Themes = {
         iconcart: "icons8-shopping-cart-light.png",
         iconheart: "icons8-heart-light.png",
         iconhamberger: "icons8-squared-menu-light.png",
+        iconfacebook: "icons8-facebook.png",
+        icongoogle: "icons8-google.png",
+        icontwitter: "icons8-line.png",
+        iconline: "icons8-twitter.png",
 
         // Content
         contentbackground: "#0d1117",

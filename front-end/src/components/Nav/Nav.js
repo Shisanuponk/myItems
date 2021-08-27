@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react'
+import React, { useContext } from 'react'
 import { NavLink } from 'react-router-dom'
 import ToggleButton from 'react-toggle-button'
 
@@ -7,12 +7,13 @@ import NavBox from './NavBox'
 
 // Import Storage
 import ThemeContext, { Themes } from '../../storage/Themes'
+
+// Import Components
 import Hamberger from './Hamberger'
-import LoginRegister from './LoginRegister'
+import BtnLogin from './BtnLogin'
 
 const Nav = () => {
     const [themes, setThemes] = useContext(ThemeContext)
-    const [isBtnOpen, setIsBtnOpen] = useState(false)
 
     document.body.style.backgroundColor = themes.background;
 
@@ -66,13 +67,15 @@ const Nav = () => {
             {/* Menu User */}
             <div className="nav-items nav-menu-user">
                 <ul className="item-box">
-                    {/* <NavLink to="/userId" className="nav-icon">
+
+                    {/* <div className="nav-icon">
+                        <BtnLogin theme={themes} />
+                    </div> */}
+                    
+                    <NavLink to="/userId" className="nav-icon">
                         <img src="./img/user-img2.jpg" alt="user-img" />
-                    </NavLink> */}
-                    <div className="nav-icon">
-                        <button onClick={() => setIsBtnOpen(!isBtnOpen)}>Login/Register</button>
-                        <LoginRegister theme={themes} open={isBtnOpen} />
-                    </div>
+                    </NavLink>
+                    
                     
                     <NavLink to="/cart" className="nav-icon" activeClassName="nav-icon-active" exact>
                         <img src={`./img/icons/${themes.iconcart}`} alt="icon-cart" />
