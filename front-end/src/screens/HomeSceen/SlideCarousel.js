@@ -14,7 +14,9 @@ const SlideCarousel = () => {
     <div>
       <Carousel>
         {items.map(item => 
-          <div key={item.id}>{item.title}</div>
+          <div 
+          key={item.id}>{item.title}
+          </div>
         )}
       </Carousel>
     </div>
