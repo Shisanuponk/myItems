@@ -1,11 +1,12 @@
 import React from "react";
+import { NavLink } from 'react-router-dom'
 import styled from "styled-components";
 
 const LoginStyle = styled.div`
   margin: 0;
   padding: 3.5rem 2rem;
-  display: flex;
-  flex-flow: column nowrap;
+  display: inline-block;
+  /* flex-flow: column nowrap; */
   background: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.color};
   border-left: 2px solid ${({ theme }) => theme.navborder};
@@ -61,49 +62,50 @@ const LoginStyle = styled.div`
 
   form {
     padding: 10px;
-    /* display: block; */
     text-align: right;
-    .group-input {
-      display: flex;
-      
-      > input{
-        margin: 0px 2px;
-      }
-    }
     input {
       margin-top: 5px;
       width: 100%;
       height: 30px;
       background: ${({theme}) => theme.background};
       border: 1px solid ${({theme}) => theme.navborder};
+      border-radius: 8px;
       text-align: center;
+    }
+    .form-link {
+      text-align: none;
+      color: ${({theme}) => theme.colorhighlight};
     }
   }
 
   
 `;
 
-const LoginSide = ({ theme, open, setOpen }) => {
+const LoginSide = ({ theme, open, setOpen, isLogin, setLogin }) => {
   return (
     <LoginStyle theme={theme} open={open}>
       <button className="btn-close" onClick={() => setOpen(false)}>X</button>
 
       <h1>Login</h1>
-      <form>
+      <form action="#">
         <input type="text" placeholder="Username/Email" />
         <input type="password" placeholder="Password" />
-        <button className="btn-form">Login</button>
+        <button className="btn-form" onClick={() => setLogin(!isLogin)}>Login</button>
+        <br />
+        <NavLink to="#" className="form-link" >Forgot my password</NavLink>
       </form>
       <h1>Regisger</h1>
-      <form>
-        <div className="group-input">
-        <input type="text" placeholder="Usernmae" />
-        <input type="text" placeholder="Email" />
-        </div>
+      <form action="#">
+        <input type="text" placeholder="First name" />
+        <input type="text" placeholder="Last name" />
+        <input type="text" placeholder="Email or Mobile Number" />
         <input type="password" placeholder="Password" />
-        <input type="password" placeholder="Confirm Password" />
-        <input type="text" placeholder="Phone" />
-        <button className="btn-form">Register</button>
+        <button
+        className="btn-form"
+        // onClick={}
+        >
+          Register
+        </button>
       </form>
 
       <div className="auth-icons">

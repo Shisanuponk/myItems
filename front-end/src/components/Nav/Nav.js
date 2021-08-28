@@ -1,48 +1,113 @@
-import React, { useContext } from 'react'
-import { NavLink } from 'react-router-dom'
-import ToggleButton from 'react-toggle-button'
+import React, { useContext, useState } from "react";
+import { NavLink } from "react-router-dom";
+import ToggleButton from "react-toggle-button";
 
 // Import Style
-import NavBox from './NavBox'
+import NavBox from "./NavBox";
 
 // Import Storage
-import ThemeContext, { Themes } from '../../storage/Themes'
+import ThemeContext, { Themes } from "../../storage/Themes";
 
 // Import Components
-import Hamberger from './Hamberger'
-import BtnLogin from './BtnLogin'
+import Hamberger from "./Hamberger";
+import BtnLogin from "./BtnLogin";
 
 const Nav = () => {
-    const [themes, setThemes] = useContext(ThemeContext)
+    const [themes, setThemes] = useContext(ThemeContext);
+    const [auth, setAuth] = useState(false);
+    const [showList, setShowList] = useState(false)
+
+    const isUserLogin = () => {
+        if (auth) {
+            return (
+                <div className="user-info">
+                    <div className="nav-icon">
+                        <img
+                            src="./img/user-img2.jpg" alt="user-img"
+                            // onClick={() => setShowList(!showList)}
+                            onMouseEnter={() => setShowList(!showList)}
+                            onMouseLeave={() => setShowList(false)}
+                        />
+                        <div
+                            className="user-list-menu"
+                            onMouseEnter={() => setShowList(!showList)}
+                            onMouseLeave={() => setShowList(false)}
+                        >
+                            <h3>Elicia Miagu</h3>
+                            <ul>
+                                <li>
+                                    <img src={`./img/icons/${themes.iconcoin}`} />
+                                    <NavLink to="#" className="list-item">20000 coins</NavLink>
+                                </li>
+                                <li>
+                                    <img src={`./img/icons/${themes.iconprofile}`} />
+                                    <NavLink to="#" className="list-item">Profile</NavLink>
+                                </li>
+                                <li>
+                                    <img src={`./img/icons/${themes.iconbill}`} />
+                                    <NavLink to="#" className="list-item">My Orders</NavLink>
+                                </li>
+                                <li>
+                                    
+                                    <img src={`./img/icons/${themes.iconstore}`} />
+                                    <NavLink to="#" className="list-item">Merchant Mode</NavLink>
+                                </li>
+                                <li>
+                                    <img src={`./img/icons/${themes.iconlogout}`} />
+                                    <NavLink
+                                        to="#"
+                                        className="list-item"
+                                        onClick={() => setAuth(!auth)}
+                                    >Logout</NavLink>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            );
+        }
+        return (
+            <div className="nav-icon">
+                <BtnLogin
+                    theme={themes}
+                    isLogin={auth}
+                    setLogin={(auth) => setAuth(auth)}
+                />
+            </div>
+        );
+    };
 
     document.body.style.backgroundColor = themes.background;
 
     return (
-        <NavBox theme={themes}>
+        <NavBox theme={themes} userList={showList}>
             <div className="nav-logo">
-                <NavLink to="/" exact>myItems</NavLink>
+                <NavLink to="/" exact>
+                    myItems
+                </NavLink>
 
                 {/* Button Toggle Change Theme */}
-                    <ToggleButton
-                        className="nav-toggle"
-                        inactiveLabel={'Light'}
-                        activeLabel={'Dark'}
-                        colors={{
-                            active: {
-                                base: 'rgb(65,66,68)',
-                                hover: 'rgb(95,96,98)',
-                            },
-                            inactive: {
-                                base: 'rgb(207,221,245)',
-                                hover: 'rgb(177, 191, 215)',
-                            }
-                        }}
-                        value={ (themes === Themes.dark?true:false) || false }
-                        onToggle={() => {
-                            if(themes === Themes.light) setThemes(Themes.dark)
-                            else setThemes(Themes.light)
-                        }}
-                    />
+                <ToggleButton
+                    className="nav-toggle"
+                    inactiveLabel={"Light"}
+                    activeLabel={"Dark"}
+                    colors={{
+                        active: {
+                            base: "rgb(65,66,68)",
+                            hover: "rgb(95,96,98)",
+                        },
+                        inactive: {
+                            base: "rgb(207,221,245)",
+                            hover: "rgb(177, 191, 215)",
+                        },
+                    }}
+                    value={(themes === Themes.dark ? true : false) || false}
+                    onToggle={() => {
+                        if (themes === Themes.light) setThemes(Themes.dark);
+                        else setThemes(Themes.light);
+                    }}
+                />
                 {/* End Button Toggle Change Theme */}
             </div>
 
@@ -67,20 +132,21 @@ const Nav = () => {
             {/* Menu User */}
             <div className="nav-items nav-menu-user">
                 <ul className="item-box">
-
-                    {/* <div className="nav-icon">
-                        <BtnLogin theme={themes} />
-                    </div> */}
-                    
-                    <NavLink to="/userId" className="nav-icon">
-                        <img src="./img/user-img2.jpg" alt="user-img" />
-                    </NavLink>
-                    
-                    
-                    <NavLink to="/cart" className="nav-icon" activeClassName="nav-icon-active" exact>
+                    {isUserLogin()}
+                    <NavLink
+                        to="/cart"
+                        className="nav-icon"
+                        activeClassName="nav-icon-active"
+                        exact
+                    >
                         <img src={`./img/icons/${themes.iconcart}`} alt="icon-cart" />
                     </NavLink>
-                    <NavLink to="/favorite" className="nav-icon" activeClassName="nav-icon-active" exact>
+                    <NavLink
+                        to="/favorite"
+                        className="nav-icon"
+                        activeClassName="nav-icon-active"
+                        exact
+                    >
                         <img src={`./img/icons/${themes.iconheart}`} alt="icon-favorite" />
                     </NavLink>
                 </ul>
@@ -91,7 +157,7 @@ const Nav = () => {
                 <Hamberger theme={themes} />
             </div>
         </NavBox>
-    )
-}
+    );
+};
 
-export default Nav
+export default Nav;

@@ -25,6 +25,11 @@ export const Themes = {
         icongoogle: "icons8-google.png",
         icontwitter: "icons8-line.png",
         iconline: "icons8-twitter.png",
+        iconcoin: "icons8-coin-dark.png",
+        iconprofile: "icons8-male-user-dark.png",
+        iconbill: "icons8-bill-dark.png",
+        iconstore: "icons8-store-dark.png",
+        iconlogout: "icons8-logout-dark.png",
 
         // Content
         contentbackground: "#0d1117",
@@ -55,6 +60,11 @@ export const Themes = {
         icongoogle: "icons8-google.png",
         icontwitter: "icons8-line.png",
         iconline: "icons8-twitter.png",
+        iconcoin: "icons8-coin-light.png",
+        iconprofile: "icons8-male-user-light.png",
+        iconbill: "icons8-bill-light.png",
+        iconstore: "icons8-store-light.png",
+        iconlogout: "icons8-logout-light.png",
 
         // Content
         contentbackground: "#0d1117",

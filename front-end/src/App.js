@@ -13,6 +13,9 @@ import Nav from "./components/Nav/Nav";
 
 // Screen
 import Home from './screens/HomeSceen/Home'
+import Store from './screens/Store';
+import Merchant from './screens/Merchant';
+import Support from './screens/Support'
 
 function App() {
 
@@ -32,8 +35,24 @@ function App() {
           <Route path="/" exact>
             <Home />
           </Route>
+          
+          <Route path="/store" exact>
+            <Store />
+          </Route>
 
-          <Route path="*">
+          <Route path="/merchant" exact>
+            <Merchant />
+          </Route>
+
+          <Route path="/support" exact>
+            <Support />
+          </Route>
+
+          <Route path="/userId" exact>
+            {/* <Support /> */}
+          </Route>
+
+          <Route path="*" exact>
             <p>404 Page not found</p>
           </Route>
 

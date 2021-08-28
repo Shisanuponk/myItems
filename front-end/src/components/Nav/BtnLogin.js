@@ -24,13 +24,20 @@ const BtnLoginStyle = styled.button`
   }
 `;
 
-const BtnLogin = ({ theme }) => {
+const BtnLogin = ({ theme, isLogin, setLogin }) => {
 
     const [isOpen, setIsOpen] = useState(false)
+    
   return (
       <>
         <BtnLoginStyle theme={theme} onClick={() => setIsOpen(!isOpen)}>Login/Register</BtnLoginStyle>
-        <LoginSide theme={theme} open={isOpen} setOpen={isOpen => setIsOpen(isOpen)} />
+        <LoginSide
+          theme={theme}
+          open={isOpen}
+          setOpen={isOpen => setIsOpen(isOpen)}
+          isLogin={isLogin}
+          setLogin={setLogin}
+        />
       </>
   )
 };
