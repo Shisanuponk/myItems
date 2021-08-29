@@ -18,7 +18,8 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
 
   .nav-logo {
     margin: 0;
-    padding: 0px 0px;
+    padding: 10px 20px;
+    /* padding: 0px 0px; */
     font-size: 25px;
     font-weight: bold;
     display: flex;

@@ -85,7 +85,8 @@ const Nav = () => {
         <NavBox theme={themes} userList={showList}>
             <div className="nav-logo">
                 <NavLink to="/" exact>
-                    <img src='./img/logo6.png' alt='logo' width='90px' height='60px'/>
+                    myItem
+                    {/* <img src='./img/logo6.png' alt='logo' width='90px' height='60px'/> */}
                 </NavLink>
 
                 {/* Button Toggle Change Theme */}
