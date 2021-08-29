@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ToggleButton from "react-toggle-button";
 
+
 // Import Style
 import NavBox from "./NavBox";
 
@@ -84,7 +85,7 @@ const Nav = () => {
         <NavBox theme={themes} userList={showList}>
             <div className="nav-logo">
                 <NavLink to="/" exact>
-                    myItems
+                    <img src='./img/logo6.png' alt='logo' width='90px' height='60px'/>
                 </NavLink>
 
                 {/* Button Toggle Change Theme */}
