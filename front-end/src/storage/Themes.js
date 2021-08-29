@@ -17,6 +17,10 @@ export const Themes = {
         navshadow: "#DEDFE0",
         navborder: "#D4D6D9",
 
+        // Card
+        backgroundcard: "#010409",
+        colorcard: "#C9D1D9",
+
         // icons
         iconcart: "icons8-shopping-cart-dark.png",
         iconheart: "icons8-heart-dark.png",
@@ -46,11 +50,13 @@ export const Themes = {
         borderhighlight: "#FFFFFF",
         shadowhighlight: "#FFFFFF",
         
-
         // Nav
         navcolor: "#161B22",
         navshadow: "#0D1117",
         navborder: "#2b3138",
+
+        backgroundcard: "#F0F2F5",
+        colorcard: "#050505",
 
         // icons
         iconcart: "icons8-shopping-cart-light.png",
