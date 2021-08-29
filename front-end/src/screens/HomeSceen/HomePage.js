@@ -10,11 +10,11 @@ background: ${props.theme.background};
 color: ${props.theme.color };
 `}
 
-background: ${ props => props.theme.background };
+/* background: ${ props => props.theme.background };
 color: ${props => props.theme.color };
 
 background: ${ props => props.theme.background};
-color: ${props => props.theme.color};
+color: ${props => props.theme.color}; */
 
 
 /* Header title */

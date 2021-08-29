@@ -5,7 +5,7 @@ import ToggleButton from "react-toggle-button";
 // Import Style
 import NavBox from "./NavBox";
 
-// Import Storage
+// Import Context
 import ThemeContext, { Themes } from "../../storage/Themes";
 
 // Import Components

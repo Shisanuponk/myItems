@@ -13,13 +13,15 @@ import Nav from "./components/Nav/Nav";
 
 // Screen
 import Home from './screens/HomeSceen/Home'
-import Store from './screens/Store';
-import Merchant from './screens/Merchant';
+import Store from './screens/Store/Store'
+import Merchant from './screens/Merchant'
 import Support from './screens/Support'
+import Cart from './screens/Cart'
+import Favorite from './screens/Favorite'
 
 function App() {
 
-  const [themes, setThemes] = useState(Themes.dark)
+  const [themes, setThemes] = useState(Themes.light)
   
   return (
     <ThemeContext.Provider value={[themes, setThemes]}>
@@ -48,8 +50,16 @@ function App() {
             <Support />
           </Route>
 
-          <Route path="/userId" exact>
-            {/* <Support /> */}
+          <Route path="/profile/id=:userId" exact>
+            <h1>User Profile</h1>
+          </Route>
+
+          <Route path="/cart" exact>
+            <Cart />
+          </Route>
+
+          <Route path="/favorite" exact>
+            <Favorite />
           </Route>
 
           <Route path="*" exact>
