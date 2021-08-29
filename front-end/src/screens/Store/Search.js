@@ -10,6 +10,15 @@ border-top-left-radius: 10px;
 border-top-right-radius: 10px;
 text-align: center;
 
+div{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    img{
+        width: 35px;
+    }
+}
+
 input{
     width: 60%;
     height: 30px;
@@ -21,11 +30,15 @@ input{
 
 `
 
-const Search = ({theme}) => {
+const Search = ({ theme }) => {
 
     return (
         <SearchStyle theme={theme}>
-            <input type="text" placeholder="Searching Items..." />
+            <div>
+                <img src={`./img/icons/${theme.iconfilter}`} alt="" />
+                <input type="text" placeholder="Searching Items..." />
+                <img src={`./img/icons/${theme.iconsearch}`} alt="" />
+            </div>
         </SearchStyle>
     )
 }

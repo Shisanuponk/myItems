@@ -15,13 +15,15 @@ min-height: 50rem;
 border: 1px solid ${props => props.theme.navborder};
 border-top-left-radius: 10px;
 border-top-right-radius: 10px;
-
+z-index: 0;
 .show-items{
-    /* padding: 10px; */
+    height: 100%;
+    padding: .5%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    column-gap: 16px;
+    column-gap: 10px;
     row-gap: 15px;
+    overflow: hidden;
 }
 
 `
@@ -33,6 +35,12 @@ const Store = () => {
         <StoreStyle theme={themes}>
             <Search theme={themes} />
             <div className="show-items">
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
                 <CardItem img="./img/item1.webp" theme={themes} />
                 <CardItem img="./img/item2.webp" theme={themes} />
                 <CardItem img="./img/item1.webp" theme={themes} />

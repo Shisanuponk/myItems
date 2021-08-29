@@ -8,6 +8,7 @@ const NavBox = styled.div`
   top: 0;
   display: flex;
   justify-content: space-between;
+  z-index: 90;
 
   ${(props) => `
 background: ${props.theme.navcolor};

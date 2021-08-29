@@ -34,6 +34,8 @@ export const Themes = {
         iconbill: "icons8-bill-dark.png",
         iconstore: "icons8-store-dark.png",
         iconlogout: "icons8-logout-dark.png",
+        iconsearch: "icons8-search-dark.png",
+        iconfilter: "icons8-filter-dark.png",
 
         // Content
         contentbackground: "#0d1117",
@@ -61,7 +63,6 @@ export const Themes = {
         // icons
         iconcart: "icons8-shopping-cart-light.png",
         iconheart: "icons8-heart-light.png",
-        iconhamberger: "icons8-squared-menu-light.png",
         iconfacebook: "icons8-facebook.png",
         icongoogle: "icons8-google.png",
         icontwitter: "icons8-line.png",
@@ -71,6 +72,8 @@ export const Themes = {
         iconbill: "icons8-bill-light.png",
         iconstore: "icons8-store-light.png",
         iconlogout: "icons8-logout-light.png",
+        iconsearch: "icons8-search-light.png",
+        iconfilter: "icons8-filter-light.png",
 
         // Content
         contentbackground: "#0d1117",
