@@ -4,20 +4,13 @@ import styled from "styled-components";
 
 // Import Storage
 import ThemeContext, {Themes} from './storage/Themes'
-
 // Import Styles
 import AppBox from './AppBox';
-
 // Import Component
 import Nav from "./components/Nav/Nav";
+// Navigator
+import Routes from './components/Routes';
 
-// Screen
-import Home from './screens/HomeSceen/Home'
-import Store from './screens/Store/Store'
-import Merchant from './screens/Merchant'
-import Support from './screens/Support'
-import Cart from './screens/Cart'
-import Favorite from './screens/Favorite'
 
 function App() {
 
@@ -32,43 +25,9 @@ function App() {
       <Content>
 
         {/* Routing */}
-        <Switch>
+        <Routes />
 
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          
-          <Route path="/store" exact>
-            <Store />
-          </Route>
-
-          <Route path="/merchant" exact>
-            <Merchant />
-          </Route>
-
-          <Route path="/support" exact>
-            <Support />
-          </Route>
-
-          <Route path="/profile/id=:userId" exact>
-            <h1>User Profile</h1>
-          </Route>
-
-          <Route path="/cart" exact>
-            <Cart />
-          </Route>
-
-          <Route path="/favorite" exact>
-            <Favorite />
-          </Route>
-
-          <Route path="*" exact>
-            <p>404 Page not found</p>
-          </Route>
-
-        </Switch>
-
-        </Content>      
+      </Content>      
     </AppBox>
     </ThemeContext.Provider>
   );

@@ -1,5 +1,40 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
+import { Link } from 'react-router-dom'
+
+// Import Components
+// import ViewItem from './ViewItem'
+
+const CardItem = ({ theme, img }) => {
+    const [isView, setIsView] = useState(false)
+    return (
+        <CardBox theme={theme}>
+            <img className="item-img" src={img} />
+            <img className="event" src="./img/icons/icons8-sale.png" />
+            <div className="btn-options">
+                <img src="./img/icons/icons8-heart-light.png" alt="" />
+                <img src="./img/icons/icons8-shopping-cart-light.png" alt="" />
+                <img
+                    src="./img/icons/icons8-view-more.png"
+                    alt=""
+                />
+            </div>
+            <div className="item-detail-box">
+                <div>
+                    <p>Black Item long hand</p>
+                    <p>Price: 150 coins</p>
+                    {/* <div className="star-point">
+                        <img src="./img/icons/star-active.png" />
+                        <img src="./img/icons/star-active.png" />
+                        <img src="./img/icons/star-active.png" />
+                        <img src="./img/icons/star-active.png" />
+                        <img src="./img/icons/star-active.png" />
+                    </div> */}
+                </div>
+            </div>
+        </CardBox>
+    )
+}
 
 const CardBox = styled.div`
 margin: auto;
@@ -24,11 +59,14 @@ img{
     transition: .25s;
 }
 .btn-options{
-    margin: 10% 3% 0;
-    width: 20%;
+    width: 100%;
     display: none;
+    position: absolute;
+    top: 40%;
+    left: 20%;
+
     img{
-        margin: 0 10px;
+        width: 20%;
     }
 }
 .item-detail-box{
@@ -42,12 +80,12 @@ img{
     bottom: 0;
     display: none;
 
-    div > .star-point{
+    /* div > .star-point{
         display: flex;
         img{
             width: 10%;
         }
-    }
+    } */
 }
 :hover{
     .item-img{
@@ -69,32 +107,5 @@ img{
 }
 
 `
-
-const CardItem = ({ theme, img }) => {
-    return (
-        <CardBox theme={theme}>
-            <img className="item-img" src={img} />
-            <img className="event" src="./img/icons/icons8-sale.png" />
-            <div className="item-detail-box">
-                <div>
-                    <p>Black Item loing hand</p>
-                    <p>Price: 150 coins</p>
-                    <div className="star-point">
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                    </div>
-                    <div className="btn-options">
-                        <img src="./img/icons/icons8-heart-light.png" alt="" />
-                        <img src="./img/icons/icons8-shopping-cart-light.png" alt="" />
-                        <img src="./img/icons/icons8-view-more.png" alt="" />
-                    </div>
-                </div>
-            </div>
-        </CardBox>
-    )
-}
 
 export default CardItem

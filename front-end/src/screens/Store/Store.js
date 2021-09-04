@@ -20,10 +20,26 @@ z-index: 0;
     height: 100%;
     padding: .5%;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
     column-gap: 10px;
     row-gap: 15px;
     overflow: hidden;
+}
+
+@media (max-width: 1400px){
+    .show-items{
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 1024px){
+    .show-items{
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
+@media (max-width: 768px){
+    .show-items{
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 `
