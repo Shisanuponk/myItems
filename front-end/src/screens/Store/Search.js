@@ -15,6 +15,7 @@ div{
     display: flex;
     justify-content: center;
     img{
+        margin: 0 2%;
         width: 35px;
     }
 }

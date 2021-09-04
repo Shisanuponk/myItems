@@ -24,7 +24,7 @@ img{
     transition: .25s;
 }
 .btn-options{
-    margin: 10% 0 0;
+    margin: 10% 3% 0;
     width: 20%;
     display: none;
     img{
