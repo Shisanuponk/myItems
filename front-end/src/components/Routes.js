@@ -7,8 +7,7 @@ import Store from '../screens/Store/Store'
 import Merchant from '../screens/Merchant'
 import Support from '../screens/Support'
 import Cart from '../screens/Cart'
-// import Favorite from './screens/Favorite'
-import ViewItem from './Item/ViewItem';
+import ViewItem from '../screens/ViewItem/ViewItem'
 
 const Navigator = () => {
     return (

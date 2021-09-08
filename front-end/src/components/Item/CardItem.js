@@ -2,34 +2,25 @@ import React, { useState } from 'react'
 import styled from 'styled-components'
 import { Link } from 'react-router-dom'
 
-// Import Components
-// import ViewItem from './ViewItem'
-
 const CardItem = ({ theme, img }) => {
     const [isView, setIsView] = useState(false)
     return (
         <CardBox theme={theme}>
             <img className="item-img" src={img} />
-            <img className="event" src="./img/icons/icons8-sale.png" />
             <div className="btn-options">
                 <img src="./img/icons/icons8-heart-light.png" alt="" />
                 <img src="./img/icons/icons8-shopping-cart-light.png" alt="" />
-                <img
-                    src="./img/icons/icons8-view-more.png"
-                    alt=""
-                />
+                <Link to="/item=1">
+                    <img
+                        src="./img/icons/icons8-view-more.png"
+                        alt=""
+                    />
+                </Link>
             </div>
             <div className="item-detail-box">
                 <div>
                     <p>Black Item long hand</p>
                     <p>Price: 150 coins</p>
-                    {/* <div className="star-point">
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                        <img src="./img/icons/star-active.png" />
-                    </div> */}
                 </div>
             </div>
         </CardBox>
@@ -44,14 +35,6 @@ background: #010409;
 align-items: center;
 display: block;
 position: relative;
-
-.event{
-    width: 20%;
-    height: 20%;
-    position: absolute;
-    top: 0;
-    right: 0;
-}
 
 img{
     width: 100%;
@@ -68,6 +51,13 @@ img{
     img{
         width: 20%;
     }
+
+    a{
+        width: 100%;
+        img{
+            width: 30%;
+        }
+    }
 }
 .item-detail-box{
     padding: 5%;
@@ -80,12 +70,6 @@ img{
     bottom: 0;
     display: none;
 
-    /* div > .star-point{
-        display: flex;
-        img{
-            width: 10%;
-        }
-    } */
 }
 :hover{
     .item-img{
