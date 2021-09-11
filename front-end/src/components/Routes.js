@@ -8,6 +8,8 @@ import Merchant from '../screens/Merchant'
 import Support from '../screens/Support'
 import Cart from '../screens/Cart'
 import ViewItem from '../screens/ViewItem/ViewItem'
+import Profile from '../screens/Profile/Profile'
+import MerchantMode from '../screens/MerchantMode'
 
 const Navigator = () => {
     return (
@@ -33,8 +35,12 @@ const Navigator = () => {
                 <Support />
             </Route>
 
-            <Route path="/profile=:userId" exact>
-                <h1>User Profile</h1>
+            <Route path="/profile" exact>
+                <Profile />
+            </Route>
+
+            <Route path="/merchant-management" exact>
+                <MerchantMode />
             </Route>
 
             <Route path="/cart" exact>

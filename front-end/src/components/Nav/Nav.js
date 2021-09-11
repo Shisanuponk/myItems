@@ -26,12 +26,12 @@ const Nav = () => {
                         <img
                             src="./img/user-img2.jpg" alt="user-img"
                             // onClick={() => setShowList(!showList)}
-                            onMouseEnter={() => setShowList(!showList)}
+                            onMouseEnter={() => setShowList(true)}
                             onMouseLeave={() => setShowList(false)}
                         />
                         <div
                             className="user-list-menu"
-                            onMouseEnter={() => setShowList(!showList)}
+                            onMouseEnter={() => setShowList(true)}
                             onMouseLeave={() => setShowList(false)}
                         >
                             <h3>Elicia Miagu</h3>
@@ -42,7 +42,7 @@ const Nav = () => {
                                 </li>
                                 <li>
                                     <img src={`./img/icons/${themes.iconprofile}`} />
-                                    <NavLink to="#" className="list-item">Profile</NavLink>
+                                    <NavLink to="/profile" className="list-item">Profile</NavLink>
                                 </li>
                                 <li>
                                     <img src={`./img/icons/${themes.iconbill}`} />
@@ -51,7 +51,7 @@ const Nav = () => {
                                 <li>
                                     
                                     <img src={`./img/icons/${themes.iconstore}`} />
-                                    <NavLink to="#" className="list-item">Merchant Mode</NavLink>
+                                    <NavLink to="/merchant-management" className="list-item">Merchant Mode</NavLink>
                                 </li>
                                 <li>
                                     <img src={`./img/icons/${themes.iconlogout}`} />

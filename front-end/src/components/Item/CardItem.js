@@ -21,6 +21,7 @@ const CardItem = ({ theme, img }) => {
                 <div>
                     <p>Black Item long hand</p>
                     <p>Price: 150 coins</p>
+                    <p>Merchant: Maria Osawa</p>
                 </div>
             </div>
         </CardBox>

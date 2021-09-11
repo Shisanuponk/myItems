@@ -25,6 +25,18 @@ const Store = () => {
                 <CardItem img="./img/item2.webp" theme={themes} />
                 <CardItem img="./img/item1.webp" theme={themes} />
                 <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
+                <CardItem img="./img/item1.webp" theme={themes} />
+                <CardItem img="./img/item2.webp" theme={themes} />
                 
             </div>
         </StoreStyle>

@@ -153,7 +153,7 @@ width: 100%;
     color: ${props => props.theme.colorhighlight};
     display: grid;
     grid-template-rows: auto 1fr;
-    textarea{
+    .text-box-detail{
         width: 100%;
         height: 100%;
         background: ${props => props.theme.navcolor};
@@ -245,7 +245,9 @@ const Reviewer = styled.div`
 width: 100%;
 min-height: 100px;
 border-bottom: 1px solid gray;
+color: ${props => props.theme.color};
 text-align: left;
+display: block;
 .viewer-profile{
     margin: 10px;
     display: flex;
@@ -253,6 +255,24 @@ text-align: left;
         width: 45px;
         height: 45px;
         border-radius: 50px;
+    }
+    .reviewer-info{
+        margin-left: 5px;
+        color: ${props => props.theme.colorhighlight};
+        display: block;
+        *{
+            margin: 0;
+            padding: 0;
+        }
+    }
+}
+.review-comment{
+    margin: 0 5% 10px;
+    width: 100%;
+    position: relative;
+    .comment-box{
+        width: 90%;
+        text-align: left;
     }
 }
 

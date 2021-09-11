@@ -13,7 +13,6 @@ const NavBox = styled.div`
   ${(props) => `
 background: ${props.theme.navcolor};
 border-bottom: 1px solid ${props.theme.navborder};
-box-shadow: 0 5px 5px ${props.theme.navshadow};
 `}
 
   .nav-logo {
@@ -78,7 +77,7 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
           width: 200px;
           box-sizing: 0 5px 25px rgb(0,0,0,0.1);
           border-radius: 15px;
-          transition: 0.5s;
+          transition: 0.25s;
           ${({ userList }) => userList ? `` : `
               visibility: hidden;
               opacity: 0;
@@ -102,7 +101,7 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
             display: flex;
             align-items: center;
             opacity: 0.5;
-            transition: 0.5s;
+            transition: 0.25s;
 
             :hover{
               opacity: 1;
@@ -114,7 +113,7 @@ box-shadow: 0 5px 5px ${props.theme.navshadow};
             display: inline-block;
             color: ${({ theme }) => theme.colorhighlight};
             font-weight: 500;
-            transition: 0.5s;
+            transition: 0.25s;
           }
 
           ::before{

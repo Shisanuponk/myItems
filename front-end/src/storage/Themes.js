@@ -36,6 +36,8 @@ export const Themes = {
         iconlogout: "icons8-logout-dark.png",
         iconsearch: "icons8-search-dark.png",
         iconfilter: "icons8-filter-dark.png",
+        iconbuyitem: "icons8-buy-dark.png",
+        iconedit: "icons8-edit-dark.png",
 
         // Content
         contentbackground: "#0d1117",
@@ -74,6 +76,8 @@ export const Themes = {
         iconlogout: "icons8-logout-light.png",
         iconsearch: "icons8-search-light.png",
         iconfilter: "icons8-filter-light.png",
+        iconbuyitem: "icons8-buy-light.png",
+        iconedit: "icons8-edit-light.png",
 
         // Content
         contentbackground: "#0d1117",
