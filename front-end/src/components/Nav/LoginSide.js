@@ -1,6 +1,47 @@
 import React from "react";
 import { NavLink } from 'react-router-dom'
 import styled from "styled-components";
+import BtnFacebookLogin from '../Test/BtnFacebookLogin'
+
+
+const LoginSide = ({ theme, open, setOpen, isLogin, setLogin }) => {
+  return (
+    <LoginStyle theme={theme} open={open}>
+      <button className="btn-close" onClick={() => setOpen(false)}>X</button>
+
+      <h1>Login</h1>
+      <form action="#">
+        <input type="text" placeholder="Username/Email" />
+        <input type="password" placeholder="Password" />
+        <button className="btn-form" onClick={() => setLogin(!isLogin)}>Login</button>
+        <br />
+        <NavLink to="#" className="form-link" >Forgot my password</NavLink>
+      </form>
+      <h1>Regisger</h1>
+      <form action="#">
+        <input type="text" placeholder="First name" />
+        <input type="text" placeholder="Last name" />
+        <input type="text" placeholder="Email or Mobile Number" />
+        <input type="password" placeholder="Password" />
+        <button
+        className="btn-form"
+        // onClick={}
+        >
+          Register
+        </button>
+      </form>
+
+      <div className="auth-icons">
+        <h3>Login By Socail Media</h3>
+          <BtnFacebookLogin icon={theme.iconfacebook} />
+          <img src={`./img/icons/${theme.icongoogle}`} />
+          <img src={`./img/icons/${theme.icontwitter}`} />
+          <img src={`./img/icons/${theme.iconline}`} />
+      </div>
+    </LoginStyle>
+  );
+};
+
 
 const LoginStyle = styled.div`
   margin: 0;
@@ -77,47 +118,6 @@ const LoginStyle = styled.div`
       color: ${({theme}) => theme.colorhighlight};
     }
   }
-
-  
 `;
-
-const LoginSide = ({ theme, open, setOpen, isLogin, setLogin }) => {
-  return (
-    <LoginStyle theme={theme} open={open}>
-      <button className="btn-close" onClick={() => setOpen(false)}>X</button>
-
-      <h1>Login</h1>
-      <form action="#">
-        <input type="text" placeholder="Username/Email" />
-        <input type="password" placeholder="Password" />
-        <button className="btn-form" onClick={() => setLogin(!isLogin)}>Login</button>
-        <br />
-        <NavLink to="#" className="form-link" >Forgot my password</NavLink>
-      </form>
-      <h1>Regisger</h1>
-      <form action="#">
-        <input type="text" placeholder="First name" />
-        <input type="text" placeholder="Last name" />
-        <input type="text" placeholder="Email or Mobile Number" />
-        <input type="password" placeholder="Password" />
-        <button
-        className="btn-form"
-        // onClick={}
-        >
-          Register
-        </button>
-      </form>
-
-      <div className="auth-icons">
-        <h3>Login By Socail Media</h3>
-          <img src={`./img/icons/${theme.iconfacebook}`} />
-          <img src={`./img/icons/${theme.icongoogle}`} />
-          <img src={`./img/icons/${theme.icontwitter}`} />
-          <img src={`./img/icons/${theme.iconline}`} />
-      </div>
-
-    </LoginStyle>
-  );
-};
 
 export default LoginSide;
