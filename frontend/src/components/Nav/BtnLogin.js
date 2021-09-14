@@ -1,8 +1,29 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-// Import right page
-import LoginSide from "./LoginSide";
+// Import Slide Drawer
+import AuthSlideDrawer from "../AuthSlideDrawer/AuthSlideDrawer";
+
+const BtnLogin = ({ theme, isLogin, setLogin }) => {
+    const [isOpen, setIsOpen] = useState(false)
+    
+  return (
+      <>
+        <BtnLoginStyle
+          theme={theme}
+          onClick={() => setIsOpen(!isOpen)}
+        >Login/Register</BtnLoginStyle>
+
+        <AuthSlideDrawer
+          theme={theme}
+          open={isOpen}
+          setOpen={isOpen => setIsOpen(isOpen)}
+          isLogin={isLogin}
+          setLogin={setLogin}
+        />
+      </>
+  )
+};
 
 const BtnLoginStyle = styled.button`
   padding: 10px 20px;
@@ -23,23 +44,5 @@ const BtnLoginStyle = styled.button`
     transition: .25s;
   }
 `;
-
-const BtnLogin = ({ theme, isLogin, setLogin }) => {
-
-    const [isOpen, setIsOpen] = useState(false)
-    
-  return (
-      <>
-        <BtnLoginStyle theme={theme} onClick={() => setIsOpen(!isOpen)}>Login/Register</BtnLoginStyle>
-        <LoginSide
-          theme={theme}
-          open={isOpen}
-          setOpen={isOpen => setIsOpen(isOpen)}
-          isLogin={isLogin}
-          setLogin={setLogin}
-        />
-      </>
-  )
-};
 
 export default BtnLogin;

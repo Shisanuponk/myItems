@@ -24,7 +24,7 @@ const BtnFacebookLogin = ({ icon }) => {
     return (
         <FacebookLogin
             appId="360631949091496"
-            autoLoad={true}
+            // autoLoad={true}
             fields="name,email"
             scope="public_profile, email"
             callback={UserSignIn}
