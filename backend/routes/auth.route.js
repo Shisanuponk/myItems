@@ -24,5 +24,5 @@ router.put('/reset-password', resetPassword)
 
 router.post('/googlelogin', googlelogin)
 router.post('/facebooklogin', facebooklogin)
-router.post('/facebooklogin', twitterlogin)
-router.post('/facebooklogin', linelogin)
+router.post('/twitterlogin', twitterlogin)
+router.post('/linelogin', linelogin)

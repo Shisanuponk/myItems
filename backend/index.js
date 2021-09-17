@@ -5,9 +5,23 @@ const axios = require('axios')
 
 const app = express()
 app.use(cors())
-
 app.use(bodyParser.json())
 
+app.get('/api', (req, res) => {
+    res.json({
+        message: "Hello Fucking User",
+        users: [
+            {
+                id: 1,
+                name: "John Doe"
+            },
+            {
+                id: 2,
+                name: "Chuck Norris"
+            }
+        ]
+    })
+})
 
 app.post('/signin/facebook', async (req, res) => {
 
