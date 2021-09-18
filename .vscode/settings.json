@@ -6,4 +6,5 @@
         "javascript": "javascriptreact"
     },
     "emmet.triggerExpansionOnTab": true,
+    "git.ignoreLimitWarning": true,
 }
