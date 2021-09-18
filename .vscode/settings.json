@@ -10,5 +10,5 @@
     "json.maxItemsComputed": 100000,
     "files.autoSave": "onWindowChange",
     "window.closeWhenEmpty": true,
-    "window.zoomLevel": 5000,
+    "window.zoomLevel": 0,
 }
