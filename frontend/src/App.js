@@ -1,42 +1,31 @@
-import React, { useState } from 'react'
-import { Switch, Route } from 'react-router-dom'
-import styled from "styled-components";
+import React, { useContext, useState } from 'react'
+import { BrowserRouter as Router } from 'react-router-dom';
 
-// Import Storage
-import ThemeContext, {Themes} from './storage/Themes'
-// Import Styles
-import AppBox from './AppBox';
-// Import Component
+import ThemeContext, { Themes } from './context/Themes'
+import { AppContainer, Content } from './App.styled';
 import Nav from "./components/Nav/Nav";
-// Navigator
-import Routes from './components/Routes';
+import Routes from './routes/Routes';
 
 
 function App() {
 
   const [themes, setThemes] = useState(Themes.light)
-  
+
   return (
-    <ThemeContext.Provider value={[themes, setThemes]}>
-      <AppBox theme={themes}>
-      
-      <Nav />
-
-      <Content>
-
-        {/* Routing */}
-        <Routes />
-
-      </Content>      
-    </AppBox>
-    </ThemeContext.Provider>
+    <Router>
+      <ThemeContext.Provider value={[themes, setThemes]}>
+        <AppContainer theme={themes}>
+          <Nav />
+          <Content>
+            {/* Routing */}
+            <Routes />
+          </Content>
+        </AppContainer>
+      </ThemeContext.Provider>
+    </Router>
   );
 }
-// Style Content
-const Content = styled.div`
-padding: 2% 15%;
-overflow: auto;
-`
+
 
 export { ThemeContext };
 export default App;

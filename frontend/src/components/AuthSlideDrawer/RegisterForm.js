@@ -1,25 +1,64 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
+
+// Import Styled
 import { FormAuth, BtnSubmitForm } from './SlideDrawer.styled'
 
-const RegisterForm = ({ theme ,regist }) => {
+const RegisterForm = ({
+    theme,
+    isLogin,
+    setLogin,
+    open,
+    setOpen
+}) => {
     const [userRegister, setUserRegister] = useState({
-        username: "",
+        name: "",
         email: "",
-        passwd: "",
-        rePasswd: ""
+        password: "",
+        repeatPassword: ""
     })
+    const [error, setError] = useState("")
 
-    const handleSubmit = evt => {
+    const handleSubmit = async evt => {
         evt.preventDefault()
-        regist(userRegister)
+
+        // if(userRegister.password !== userRegister.repeatPassword){
+        //     setUserRegister({...userRegister, password: "", repeatPassword: ""})
+        //     setTimeout(() => {
+        //         setError("")
+        //     }, 5000)
+        //     return setError("Passwords don't match")
+        // }
+
+        // try{
+        //     const { name, email, password} = userRegister
+        //     const { data } = await registerAPI(name, email, password)
+
+        //     localStorage.setItem("authToken", data.token)
+        //     setUserRegister({
+        //         ...userRegister,
+        //         name: "",
+        //         email: "",
+        //         password: "",
+        //         repeatPassword: ""
+        //     })
+        //     setOpen(!open)
+        //     setLogin(!isLogin)
+        // } catch (error) {
+        //     setError(error.response.data.error)
+        //     setTimeout( () => {
+        //         setError("")
+        //     }, 5000)
+        // }
     }
+
     return (
         <FormAuth theme={theme} onSubmit={handleSubmit}>
+            {error && <p>{error}</p>}
             <input
                 type="text"
                 placeholder="First name/Last Name"
-                onChange={ e => setUserRegister({...userRegister, username: e.target.value}) }
-                value={userRegister.username}
+                onChange={ e => setUserRegister({...userRegister, name: e.target.value}) }
+                value={userRegister.name}
                 required
             />
             <input
@@ -31,17 +70,17 @@ const RegisterForm = ({ theme ,regist }) => {
             />
             <input
                 type="password"
-                placeholder="Password (minimum 8 character)"
-                onChange={ e => setUserRegister({...userRegister, passwd: e.target.value}) }
-                value={userRegister.passwd}
-                minLength="8"
+                placeholder="Password (minimum 6 character)"
+                onChange={ e => setUserRegister({...userRegister, password: e.target.value}) }
+                value={userRegister.password}
+                minLength="6"
                 required
             />
             <input
                 type="password"
                 placeholder="Repeat-Password"
-                onChange={ e => setUserRegister({...userRegister, rePasswd: e.target.value}) }
-                value={userRegister.rePasswd}
+                onChange={ e => setUserRegister({...userRegister, repeatPassword: e.target.value}) }
+                value={userRegister.repeatPassword}
                 required
             />
             <BtnSubmitForm

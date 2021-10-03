@@ -1,17 +1,39 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+// import { authAPI } from '../../api/api'
 import { FormAuth, BtnSubmitForm } from './SlideDrawer.styled'
 
-const LoginForm = ({theme, login}) => {
-    const [userLogin, setUserLogin] = useState({ email: "", passwd: "" })
+const LoginForm = ({
+    theme,
+    isLogin,
+    setLogin,
+    open,
+    setOpen
+}) => {
+    const [userLogin, setUserLogin] = useState({ email: "", password: "" })
+    const [error, setError] = useState("")
 
-    const handleSubmit = evt => {
+    const handleSubmit = async evt => {
         evt.preventDefault()
-        console.log(`login by[email: ${userLogin.passwd}, passwd: ${userLogin.email}]`);
-        login(userLogin)
+
+        // try{
+        //     const { email, password} = userLogin
+        //     const { data } = await authAPI(email, password)
+
+        //     localStorage.setItem("authToken", data.token)
+        //     setUserLogin({...userLogin, email: "", password: ""})
+        //     setOpen(!open)
+        //     setLogin(!isLogin)
+        // } catch (error) {
+        //     setError(error.response.data.error)
+        //     setTimeout( () => {
+        //         setError("")
+        //     }, 5000)
+        // }
     }
     return (
         <FormAuth theme={theme} onSubmit={handleSubmit}>
+            {error && <p>{error}</p>}
             <input
                 type="text"
                 placeholder="Username/Email"
@@ -22,13 +44,13 @@ const LoginForm = ({theme, login}) => {
             <input
                 type="password"
                 placeholder="Password"
-                onChange={e => setUserLogin({...userLogin, passwd: e.target.value})}
-                value={userLogin.passwd}
+                onChange={e => setUserLogin({...userLogin, password: e.target.value})}
+                value={userLogin.password}
                 required
             />
             <BtnSubmitForm theme={theme}>Login</BtnSubmitForm>
             <br />
-            <NavLink to="#" className="form-link" >Forgot my password</NavLink>
+            <NavLink to="/forgotpassword" className="form-link" >Forgot my password</NavLink>
         </FormAuth>
     )
 }

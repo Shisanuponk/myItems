@@ -1,28 +1,18 @@
-const express = require("express");
-const router = express.Router();
+const express = require('express')
+const router = express.Router()
 
-// Import Controller
+// Import Controllers
 const {
-    signup,
-    accountAtivation,
-    signin,
-    facebooklogin,
-    googlelogin,
-    twitterlogin,
-    linelogin,
-    forgotPassword,
-    resetPassword
-} = require()
+    login,
+    register,
+    forgotPass,
+    resetPass
+} = require('../controllers/auth.controller')
 
-router.post('/signup', signup);
-router.post('/account-activation', accountAtivation)
-router.post('/signin', signin)
+// Auth
+router.route('/login').post(login)
+router.route('/register').post(register)
+router.route('/forgotpassword').post(forgotPass)
+router.route('/resetpassword/:tokenResetPassword').put(resetPass)
 
-// Forgot/Reset Password Router
-router.put('/forgot-password', forgotPassword)
-router.put('/reset-password', resetPassword)
-
-router.post('/googlelogin', googlelogin)
-router.post('/facebooklogin', facebooklogin)
-router.post('/twitterlogin', twitterlogin)
-router.post('/linelogin', linelogin)
+module.exports = router

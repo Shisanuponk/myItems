@@ -4,24 +4,14 @@ import RegisterForm from "./RegisterForm";
 import LoginForm from "./LoginForm";
 import OAuth from "./OAuth";
 
-const AuthSlideDrawer = ({ theme, open, setOpen, isLogin, setLogin }) => {
-  const fakeUser = {email: "admin@myitems.com", passwd: "1234"}
+const AuthSlideDrawer = ({
+  theme,
+  open,
+  setOpen,
+  isLogin,
+  setLogin
+}) => {
 
-  // Login
-  const Login = userInfo => {
-    console.log(userInfo)
-    if(userInfo.email == fakeUser.email && userInfo.passwd == fakeUser.passwd){
-      console.log("Logged in");
-      setLogin(!isLogin)
-    } else
-      console.log("User Info do not match");
-  }
-
-  // Register
-  const Register = userInfo => {
-    console.log(userInfo);
-  }
-  
   return (
     <LoginStyle theme={theme} open={open}>
       <button
@@ -30,14 +20,26 @@ const AuthSlideDrawer = ({ theme, open, setOpen, isLogin, setLogin }) => {
       >X</button>
 
       <h1>Login</h1>
-      <LoginForm theme={theme} login={Login} />
+      <LoginForm
+        theme={theme}
+        isLogin={isLogin}
+        setLogin={setLogin}
+        open={open}
+        setOpen={open => setOpen(open)}
+      />
 
       <h1>Register</h1>
-      <RegisterForm theme={theme} regist={Register} />
+      <RegisterForm
+        theme={theme}
+        isLogin={isLogin}
+        setLogin={setLogin}
+        open={open}
+        setOpen={open => setOpen(open)}
+      />
 
       {/* OAuth */}
       <OAuth theme={theme} />
-      
+
     </LoginStyle>
   );
 };

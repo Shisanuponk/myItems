@@ -4,7 +4,11 @@ import styled from "styled-components";
 // Import Slide Drawer
 import AuthSlideDrawer from "../AuthSlideDrawer/AuthSlideDrawer";
 
-const BtnLogin = ({ theme, isLogin, setLogin }) => {
+const BtnLogin = ({
+  theme,
+  isLogin,
+  setLogin
+}) => {
     const [isOpen, setIsOpen] = useState(false)
     
   return (

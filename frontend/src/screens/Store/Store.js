@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import Search from './Search'
 
 // Import Theme
-import ThemeContext, { Themes } from "../../storage/Themes";
+import ThemeContext, { Themes } from "../../context/Themes";
 // Import Components
 import CardItem from '../../components/Item/CardItem';
 

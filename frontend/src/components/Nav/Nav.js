@@ -1,72 +1,40 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 import ToggleButton from "react-toggle-button";
 
 
 // Import Style
-import NavBox from "./NavBox";
-
+import NavBox from "./Nav.styled";
 // Import Context
-import ThemeContext, { Themes } from "../../storage/Themes";
-
+import ThemeContext, { Themes } from "../../context/Themes";
 // Import Components
 import Hamberger from "./Hamberger";
 import BtnLogin from "./BtnLogin";
+import BtnUser from "./BtnUser";
+import axios from "axios";
 
 const Nav = () => {
     const [themes, setThemes] = useContext(ThemeContext);
-    const [auth, setAuth] = useState(false);
+    const [auth, setAuth] = useState(false)
     const [showList, setShowList] = useState(false)
+    const [userData, setUserData] = useState("")
+
+    useEffect(() => {
+        isUserLogin()
+        if(localStorage.getItem("jwt"))
+            fetchUserData()
+    }, [auth])
 
     const isUserLogin = () => {
-        if (auth) {
+        if (localStorage.getItem("jwt")){
             return (
-                <div className="user-info">
-                    <div className="nav-icon">
-                        <img
-                            src="./img/user-img2.jpg" alt="user-img"
-                            // onClick={() => setShowList(!showList)}
-                            onMouseEnter={() => setShowList(true)}
-                            onMouseLeave={() => setShowList(false)}
-                        />
-                        <div
-                            className="user-list-menu"
-                            onMouseEnter={() => setShowList(true)}
-                            onMouseLeave={() => setShowList(false)}
-                        >
-                            <h3>Elicia Miagu</h3>
-                            <ul>
-                                <li>
-                                    <img src={`./img/icons/${themes.iconcoin}`} />
-                                    <NavLink to="#" className="list-item">20000 coins</NavLink>
-                                </li>
-                                <li>
-                                    <img src={`./img/icons/${themes.iconprofile}`} />
-                                    <NavLink to="/profile" className="list-item">Profile</NavLink>
-                                </li>
-                                <li>
-                                    <img src={`./img/icons/${themes.iconbill}`} />
-                                    <NavLink to="#" className="list-item">My Orders</NavLink>
-                                </li>
-                                <li>
-                                    
-                                    <img src={`./img/icons/${themes.iconstore}`} />
-                                    <NavLink to="/merchant-management" className="list-item">Merchant Mode</NavLink>
-                                </li>
-                                <li>
-                                    <img src={`./img/icons/${themes.iconlogout}`} />
-                                    <NavLink
-                                        to="#"
-                                        className="list-item"
-                                        onClick={() => setAuth(!auth)}
-                                    >Logout</NavLink>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-            );
+                <BtnUser
+                    theme={themes}
+                    setAuth={setAuth}
+                    setShowList={setShowList}
+                    userData={userData}
+                />
+            )
         }
         return (
             <div className="nav-icon">
@@ -79,6 +47,22 @@ const Nav = () => {
         );
     };
 
+    const fetchUserData = async () => {
+        const config = {
+            headers: {
+                "Content-Type": "application/json",
+                "Authorization": `Bearer ${localStorage.getItem("authToken")}`
+            }
+        }
+        try {
+            const {data} = await axios.get("http://localhost:5000/api/private", config)
+            setUserData(data.data)
+        } catch (error) {
+            localStorage.removeItem("authToken")
+            alert(error)
+        }
+    }
+
     document.body.style.backgroundColor = themes.background;
 
     return (
@@ -86,7 +70,6 @@ const Nav = () => {
             <div className="nav-logo">
                 <NavLink to="/" exact>
                     myItem
-                    {/* <img src='./img/logo6.png' alt='logo' width='90px' height='60px'/> */}
                 </NavLink>
 
                 {/* Button Toggle Change Theme */}

@@ -1,20 +1,19 @@
 import React from 'react'
 import FacebookLogin from 'react-facebook-login/dist/facebook-login-render-props'
 import axios from 'axios'
+import { authFacebook } from '../../api/Oauth'
 
 const BtnFacebookLogin = ({ icon }) => {
 
     const UserSignIn = async response => {
+        console.log('res --> ', response);
         const { name, email, accessToken, userID } = response
         const user = { name, email, accessToken, userId: userID }
 
-        await axios({
-            method: 'post',
-            url: 'http://localhost:4000/signin/facebook',
-            data: {
-                user
-            }
-        })
+        await axios.post(
+            'http://localhost:5000/api/oauth/facebook',
+            {user}
+        )
     }
 
     const responseFacebook = (res) => {
@@ -23,7 +22,7 @@ const BtnFacebookLogin = ({ icon }) => {
 
     return (
         <FacebookLogin
-            appId="360631949091496"
+            appId={authFacebook.appId}
             // autoLoad={true}
             fields="name,email"
             scope="public_profile, email"

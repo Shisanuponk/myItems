@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react'
 
 // Import Theme
-import ThemeContext, { Themes } from "../../storage/Themes";
+import ThemeContext, { Themes } from "../../context/Themes";
 // Import Styled
 import { ItemPage, ItemShow, ItemImgBox, ItemImgMain, ItemImgSelect, ItemInfo, Reviews } from './ViewPageStyled'
 // Import Components

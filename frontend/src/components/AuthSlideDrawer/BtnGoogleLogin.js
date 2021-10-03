@@ -1,20 +1,33 @@
+import axios from 'axios'
 import React from 'react'
 import { GoogleLogin } from 'react-google-login'
+import { authGoogle } from '../../api/Oauth'
+
 
 const BtnGoogleLogin = ({ icon }) => {
-
     const googleSuccess = async (res) => {
         console.log("success => ", res);
+        const {
+            tokenObj: { access_token },
+            profileObj: { googleId, email, name }
+        } = res
+
+        const user = { name, email, accessToken: access_token, userId: googleId }
+
+        await axios.post(
+            'http://localhost:5000/api/oauth/google',
+            {user}
+        )
     }
     const googleFailure = (err) => {
         console.log(err);
     }
     return (
         <GoogleLogin
-            clientId="203412094120-1r14ohficmc1pr2je16j3chgafhgjuu7.apps.googleusercontent.com"
+            clientId={authGoogle.clientId}
             onSuccess={googleSuccess}
             onFailure={googleFailure}
-            cookiePolicy="single_host_origin"
+            cookiePolicy={authGoogle.cookiePolicy}
             render={ renderProps =>
                 <img
                     src={`./img/icons/${icon}`}
