@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { registerAPI } from '../../api/api'
 
 // Import Styled
 import { FormAuth, BtnSubmitForm } from './SlideDrawer.styled'
+
 
 const RegisterForm = ({
     theme,
@@ -21,34 +23,34 @@ const RegisterForm = ({
     const handleSubmit = async evt => {
         evt.preventDefault()
 
-        // if(userRegister.password !== userRegister.repeatPassword){
-        //     setUserRegister({...userRegister, password: "", repeatPassword: ""})
-        //     setTimeout(() => {
-        //         setError("")
-        //     }, 5000)
-        //     return setError("Passwords don't match")
-        // }
+        if(userRegister.password !== userRegister.repeatPassword){
+            setUserRegister({...userRegister, password: "", repeatPassword: ""})
+            setTimeout(() => {
+                setError("")
+            }, 5000)
+            return setError("Passwords don't match")
+        }
 
-        // try{
-        //     const { name, email, password} = userRegister
-        //     const { data } = await registerAPI(name, email, password)
+        try{
+            const { name, email, password} = userRegister
+            const { data } = await registerAPI(name, email, password)
 
-        //     localStorage.setItem("authToken", data.token)
-        //     setUserRegister({
-        //         ...userRegister,
-        //         name: "",
-        //         email: "",
-        //         password: "",
-        //         repeatPassword: ""
-        //     })
-        //     setOpen(!open)
-        //     setLogin(!isLogin)
-        // } catch (error) {
-        //     setError(error.response.data.error)
-        //     setTimeout( () => {
-        //         setError("")
-        //     }, 5000)
-        // }
+            localStorage.setItem("jwt", data.token)
+            setUserRegister({
+                ...userRegister,
+                name: "",
+                email: "",
+                password: "",
+                repeatPassword: ""
+            })
+            setOpen(!open)
+            setLogin(!isLogin)
+        } catch (err) {
+            setError(err.response.data.error)
+            setTimeout( () => {
+                setError("")
+            }, 5000)
+        }
     }
 
     return (

@@ -4,18 +4,17 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 
 const UserSchema = new mongoose.Schema({
+
+    // Local auth
     email: {
         type: String,
-        // required: [false, "Please provide email address"],
+        required: false,
         unique: true,
-        match: [
-            /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-            "Please provide a valid email",
-        ],
+        match: [/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/  , "Please provide a valid email"],
     },
     password: {
         type: String,
-        // required: [true, "Please add a password"],
+        required: false,
         minlength: 6,
         select: false,
     },
@@ -41,6 +40,7 @@ const UserSchema = new mongoose.Schema({
         required: false,
         unique: true
     },
+
     // User Info
     status: {
         type: String,
@@ -74,11 +74,8 @@ const UserSchema = new mongoose.Schema({
             },
         ]
     },
-    join: {
-        type: Date,
-        required: true,
-        default: Date.now()
-    },
+
+    // Token for reset password
     token_reset_password: String,
     token_reset_password_exp: Date,
 });

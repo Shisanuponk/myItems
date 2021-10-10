@@ -7,19 +7,16 @@ const BtnFacebookLogin = ({ icon }) => {
 
     const UserSignIn = async response => {
         console.log('res --> ', response);
-        const { name, email, accessToken, userID } = response
-        const user = { name, email, accessToken, userId: userID }
+        const { name, userID } = response
+        const user = { name, userId: userID }
 
-        await axios.post(
+        const { data } = await axios.post(
             'http://localhost:5000/api/oauth/facebook',
             {user}
         )
+        localStorage.setItem("jwt", data.token)
+        
     }
-
-    const responseFacebook = (res) => {
-        console.log(res);
-    }
-
     return (
         <FacebookLogin
             appId={authFacebook.appId}

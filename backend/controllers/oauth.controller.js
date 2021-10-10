@@ -32,73 +32,34 @@ const facebook = async (req, res, next) => {
                     facebookId: req.body.user.userId,
                     name: req.body.user.name
                 })
+                sendToken(userRegis, 200, res)
             } catch (err) {
                 next(err)
             }
         }
+        sendToken(user, 200, res)
     } catch (err) {
         next(err)
     }
 }
+
 const google = async (req, res, next) => {
-    const token = req.body
-    if(!token)
-        return next(new ErrorResponse("Please provide the token", 400))
-    try {
-        const user = await User.findOne({ email }).select('+password')
-
-        if (!user){
-            register('facebook', data)
+    // console.log(req.body.user)
+    if(!req.body.user) return next(new ErrorResponse("Please provide user data", 400))
+    try{
+        const user = await User.findOne({googleId: req.body.user.userId})
+        if(!user){
+            try {
+                const userRegis = await User.create({
+                    googleId: req.body.user.userId,
+                    name: req.body.user.name
+                })
+                sendToken(userRegis, 200, res)
+            } catch (err) {
+                next(err)
+            }
         }
-
         sendToken(user, 200, res)
-    } catch (err) {
-        next(err)
-    }
-}
-const twitter = async (req, res, next) => {
-    const token = req.body
-    if(!token)
-        return next(new ErrorResponse("Please provide the token", 400))
-    try {
-        const user = await User.findOne({ email }).select('+password')
-
-        if (!user){
-            register('facebook', data)
-        }
-
-        sendToken(user, 200, res)
-    } catch (err) {
-        next(err)
-    }
-}
-const line = async (req, res, next) => {
-    const token = req.body
-    if(!token)
-        return next(new ErrorResponse("Please provide the token", 400))
-    try {
-        const user = await User.findOne({ email }).select('+password')
-
-        if (!user){
-            register('facebook', data)
-        }
-
-        sendToken(user, 200, res)
-    } catch (err) {
-        next(err)
-    }
-}
-
-const register = async (authType, data) => {
-    const {name, id} = data
-    try {
-        const user = await User.create({
-            id,
-            name,
-            status: "enable",
-        });
-
-        sendToken(user, 200, res);
     } catch (err) {
         next(err)
     }
@@ -109,4 +70,4 @@ const sendToken = (user, statusCode, res) => {
     res.status(statusCode).json({ success: true, token })
 }
 
-module.exports = {facebook}
+module.exports = {facebook, google}

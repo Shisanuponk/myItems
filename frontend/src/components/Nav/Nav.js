@@ -11,7 +11,7 @@ import ThemeContext, { Themes } from "../../context/Themes";
 import Hamberger from "./Hamberger";
 import BtnLogin from "./BtnLogin";
 import BtnUser from "./BtnUser";
-import axios from "axios";
+import { getUser } from "../../api/api";
 
 const Nav = () => {
     const [themes, setThemes] = useContext(ThemeContext);
@@ -48,17 +48,12 @@ const Nav = () => {
     };
 
     const fetchUserData = async () => {
-        const config = {
-            headers: {
-                "Content-Type": "application/json",
-                "Authorization": `Bearer ${localStorage.getItem("authToken")}`
-            }
-        }
         try {
-            const {data} = await axios.get("http://localhost:5000/api/private", config)
+            const {data} = await getUser()
+            console.log("data --> ",data);
             setUserData(data.data)
         } catch (error) {
-            localStorage.removeItem("authToken")
+            localStorage.removeItem("jwt")
             alert(error)
         }
     }

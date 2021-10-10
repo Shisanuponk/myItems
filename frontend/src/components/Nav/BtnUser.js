@@ -1,26 +1,18 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { NavLink } from 'react-router-dom'
-import { logout } from '../../api/api'
 
 const BtnUser = ({
     theme,
     setShowList,
     userData
 }) => {
-
-    const handleLogout = async () => {
-        const res = await logout()
-        if(res.data === "success"){
-            localStorage.removeItem("authToken")
-        }
-    }
     
     return (
         <div className="user-info">
             <div className="nav-icon">
                 <img
                     src="./img/user-img2.jpg" alt="user-img"
-                    onMouseEnter={() => setShowList(true)}
+                    onClick={() => setShowList(true)}
                     onMouseLeave={() => setShowList(false)}
                 />
                 <div
@@ -42,17 +34,20 @@ const BtnUser = ({
                             <img src={`./img/icons/${theme.iconbill}`} />
                             <NavLink to="#" className="list-item">My Orders</NavLink>
                         </li>
-                        <li>
-
+                        {userData.authorities === "merchant" ?
+                            <li>
                             <img src={`./img/icons/${theme.iconstore}`} />
-                            <NavLink to="/merchant-management" className="list-item">Merchant Mode</NavLink>
-                        </li>
+                            <NavLink to="/dashboard" className="list-item">Merchant Mode</NavLink>
+                            </li>
+                            :
+                            ''
+                        }
                         <li>
                             <img src={`./img/icons/${theme.iconlogout}`} />
                             <NavLink
                                 to="#"
                                 className="list-item"
-                                onClick={handleLogout}
+                                onClick={() => localStorage.removeItem("jwt")}
                             >Logout</NavLink>
                         </li>
                     </ul>

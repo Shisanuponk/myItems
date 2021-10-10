@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
-// import { authAPI } from '../../api/api'
+import { loginAPI } from '../../api/api'
 import { FormAuth, BtnSubmitForm } from './SlideDrawer.styled'
 
 const LoginForm = ({
@@ -16,20 +16,20 @@ const LoginForm = ({
     const handleSubmit = async evt => {
         evt.preventDefault()
 
-        // try{
-        //     const { email, password} = userLogin
-        //     const { data } = await authAPI(email, password)
+        try{
+            const { email, password} = userLogin
+            const { data } = await loginAPI(email, password)
 
-        //     localStorage.setItem("authToken", data.token)
-        //     setUserLogin({...userLogin, email: "", password: ""})
-        //     setOpen(!open)
-        //     setLogin(!isLogin)
-        // } catch (error) {
-        //     setError(error.response.data.error)
-        //     setTimeout( () => {
-        //         setError("")
-        //     }, 5000)
-        // }
+            localStorage.setItem("jwt", data.token)
+            setUserLogin({...userLogin, email: "", password: ""})
+            setOpen(!open)
+            setLogin(!isLogin)
+        } catch (err) {
+            setError(err.response.data.error)
+            setTimeout( () => {
+                setError("")
+            }, 5000)
+        }
     }
     return (
         <FormAuth theme={theme} onSubmit={handleSubmit}>

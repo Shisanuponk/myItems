@@ -12,12 +12,13 @@ const BtnGoogleLogin = ({ icon }) => {
             profileObj: { googleId, email, name }
         } = res
 
-        const user = { name, email, accessToken: access_token, userId: googleId }
+        const user = { userId: googleId, name }
 
-        await axios.post(
+        const {data} = await axios.post(
             'http://localhost:5000/api/oauth/google',
             {user}
         )
+        localStorage.setItem("jwt", data.token)
     }
     const googleFailure = (err) => {
         console.log(err);
