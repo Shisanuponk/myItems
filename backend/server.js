@@ -9,6 +9,7 @@ dotenv.config({ path: "./backend/.env" })
 connectDB()
 app.use(cors())
 app.use(express.json())
+
 app.get('/', (req, res, next) => {
     res.send('MyItems Api running')
 })

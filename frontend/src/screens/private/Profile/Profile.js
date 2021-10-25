@@ -67,10 +67,10 @@ const Profile = () => {
                     </UserInfoBox>
                 </UserInfo>
                 <UserAddr theme={themes}>
-                    {/* <AddrBox theme={themes}>
-                        <h3>{user.address[0].addrName}</h3>
-                        <p>{user.address[0].addrInfo}</p>
-                    </AddrBox> */}
+                    <AddrBox theme={themes}>
+                        <h3>{}</h3>
+                        <p>{}</p>
+                    </AddrBox>
                 </UserAddr>
             </ProfileUserInfoBox>
         </ProfileBox>
