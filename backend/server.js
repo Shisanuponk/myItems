@@ -18,7 +18,6 @@ app.get('/', (req, res, next) => {
 app.use('/api/auth', require('./routes/auth.route'))
 app.use('/api/oauth', require('./routes/oauth.route'))
 app.use('/api/private', require('./routes/private.route'))
-app.use('/api/product', require('./routes/product.route'))
 
 // Error Handler Middleware
 app.use(errorHandler)

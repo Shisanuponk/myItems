@@ -1,15 +1,27 @@
 import { Redirect, Route } from "react-router";
-
-const MerchantRoute = ({ component: Component, ...rest }) => {
-
+import {getUser} from '../api/api'
+const PrivateRoute = ({ component: Component, ...rest }) => {
+    const isMerchant = async() => {
+        const res = await getUser()
+        if(res.data.authorities === "merchant")
+            return true
+        return false
+    }
     return (
-        <Route {...rest} render={props =>
-            localStorage.getItem('jwt') ?
-                <Component {...props} /> :
-                <Redirect to='/' />
+        <Route
+        {...rest}
+        render={
+            (props) => {
+                localStorage.getItem("jwt") && isMerchant() ? (
+                    <Component {...props} />
+                ) : (
+                    <Redirect to="/" />
+                )
+            }
         }
+
         />
     )
 }
 
-export default MerchantRoute
+export default PrivateRoute

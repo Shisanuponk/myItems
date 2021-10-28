@@ -1,7 +1,7 @@
-const crypto = require("crypto")
-const mongoose = require("mongoose")
-const bcrypt = require("bcryptjs")
-const jwt = require("jsonwebtoken")
+const crypto = require("crypto");
+const mongoose = require("mongoose");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const UserSchema = new mongoose.Schema({
     email: {
@@ -81,7 +81,7 @@ const UserSchema = new mongoose.Schema({
     },
     token_reset_password: String,
     token_reset_password_exp: Date,
-})
+});
 
 UserSchema.pre("save", async function (next) {
     if (!this.isModified("password")) {
