@@ -13,3 +13,5 @@ export const getUser = () => axios.get("/private", {
 export const loginAPI = (email, password) => axios.post('/auth/login', {email, password})
 export const registerAPI = (name, email, password) => axios.post('/auth/register', {name, email, password})
 export const logout = () => axios.get('/auth/logout', {withCredentials: true})
+
+export const uploadProductImage = (images) => axios.post('/product/create', {images})
